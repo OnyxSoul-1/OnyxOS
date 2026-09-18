@@ -7,7 +7,7 @@ export const appMap = {
   },
   deltaruneCh5: {
     type: "game",
-    url: "https://cdn.jsdelivr.net/gh/NaoTomori1/yukios-games@main/deltarunefull.html",
+    url: "https://cdn.jsdelivr.net/gh/NaoTomori1/yukios-games@main/html/deltarunefull.html",
     icon: "/static/icons/deltarune.png",
     title: "Deltarune CH1-5",
     skipRewrite: true
