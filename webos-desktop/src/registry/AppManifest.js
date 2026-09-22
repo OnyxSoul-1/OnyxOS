@@ -65,7 +65,7 @@ export const APP_MANIFESTS = [
     windowIdPatterns: ["news"],
     category: "help",
     clippy: { message: "Catch up on the latest changes and see what shipped.", animation: ClippyAnimation.Show },
-    description: "Displays system updates, release notes, and changelog entries for YukiOS features and improvements."
+    description: "Displays system updates, release notes, and changelog entries for OnyxOS features and improvements."
   },
   {
     serviceKey: "calculatorApp",
@@ -138,7 +138,7 @@ export const APP_MANIFESTS = [
     serviceKey: "monacoApp",
     enhanced: true,
     type: "system",
-    title: "Yuki Code",
+    title: "Onyx Code",
     icon: "papirus:apps/vscode",
     launchType: "instance",
     windowIdPatterns: ["monaco"],
@@ -152,7 +152,7 @@ export const APP_MANIFESTS = [
     serviceKey: "emulatorApp",
     enhanced: true,
     type: "system",
-    title: "Yuki Emulator",
+    title: "Onyx Emulator",
     icon: `${CDN_BASE}/static/icons/emulator.webp`,
     launchType: "instance",
     windowIdPatterns: ["emulator"],
@@ -207,7 +207,7 @@ export const APP_MANIFESTS = [
     serviceKey: "yukiConvertApp",
     enhanced: false,
     type: "system",
-    title: "Yuki Convert",
+    title: "Onyx Convert",
     icon: "papirus:actions/swap-panels",
     launchType: "instance",
     windowIdPatterns: ["yuki-convert"],
@@ -228,7 +228,7 @@ export const APP_MANIFESTS = [
     windowIdPatterns: ["setup", "setup-wizard"],
     category: "help",
     clippy: { message: "Walk through setup and get the basics out of the way.", animation: ClippyAnimation.Greeting },
-    description: "Initial setup guide for new users to configure YukiOS preferences."
+    description: "Initial setup guide for new users to configure OnyxOS preferences."
   },
   {
     serviceKey: "dataEditorApp",
@@ -246,13 +246,13 @@ export const APP_MANIFESTS = [
     serviceKey: "yukiOsGuideApp",
     enhanced: true,
     type: "system",
-    title: "YukiOS Guide",
+    title: "OnyxOS Guide",
     icon: "papirus:apps/accessories-dictionary",
     launchType: "instance",
     windowIdPatterns: ["yuki-os-guide", "yukios-guide"],
     category: "help",
     clippy: { message: "Open the guide and learn the parts that matter fastest.", animation: ClippyAnimation.Show },
-    description: "Comprehensive documentation and feature discovery hub for YukiOS."
+    description: "Comprehensive documentation and feature discovery hub for OnyxOS."
   },
   {
     serviceKey: "introTourApp",
@@ -274,7 +274,7 @@ export const APP_MANIFESTS = [
     launchType: "instance",
     windowIdPatterns: [],
     category: "system",
-    description: "Switch between desktop modes: MacOS, SteamDeck, ChromeOS, Tiling, and YukiOS default."
+    description: "Switch between desktop modes: MacOS, SteamDeck, ChromeOS, Tiling, and OnyxOS default."
   },
   {
     serviceKey: "clipboardManagerApp",
@@ -295,7 +295,7 @@ export const APP_MANIFESTS = [
     serviceKey: "aiAssistantApp",
     enhanced: false,
     type: "system",
-    title: "Yuki AI Assistant",
+    title: "Onyx AI Assistant",
     icon: "papirus:apps/gnome-robots",
     launchType: "instance",
     windowIdPatterns: ["ai-assistant"],
@@ -381,7 +381,7 @@ export const APP_MANIFESTS = [
   {
     serviceKey: "browserApp",
     type: "system",
-    title: "Yuki Browser",
+    title: "Onyx Browser",
     icon: `${CDN_BASE}/static/icons/firefox.webp`,
     launchType: "instance",
     windowIdPatterns: ["scramjet-window", "browser"],
@@ -393,7 +393,7 @@ export const APP_MANIFESTS = [
       message: "Select Tor from the proxy dropdown to browse anonymously. I'll handle the setup.",
       animation: ClippyAnimation.Wave
     },
-    description: "CORS proxy browser with bookmarks, history, tab management, and Tor anonymous browsing within YukiOS."
+    description: "CORS proxy browser with bookmarks, history, tab management, and Tor anonymous browsing within OnyxOS."
   },
   {
     serviceKey: "discordApp",
@@ -972,7 +972,7 @@ export const APP_MANIFESTS = [
   {
     serviceKey: "yukiDevToolsApp",
     type: "system",
-    title: "Yuki Dev Tools",
+    title: "Onyx Dev Tools",
     icon: "papirus:apps/code",
     launchType: "method",
     launchMethod: "openYukiDevToolsApp",
@@ -1052,14 +1052,14 @@ export const APP_MANIFESTS = [
   {
     serviceKey: "steamApp",
     type: "system",
-    title: "Yuki Steam",
+    title: "Onyx Steam",
     icon: "papirus:apps/steam",
     launchType: "steam",
     windowIdPatterns: ["games-app"],
     category: "games",
     clippy: { message: "Browse game picks here and find something worth launching.", animation: ClippyAnimation.Wave },
     description:
-      "Game storefront and launcher interface for browsing, managing, and launching games through Yuki Steam integration."
+      "Game storefront and launcher interface for browsing, managing, and launching games through Onyx Steam integration."
   },
   {
     serviceKey: "appCreatorApp",
@@ -1451,7 +1451,7 @@ export const APP_MANIFESTS = [
     serviceKey: "remoteHostApp",
     enhanced: true,
     type: "system",
-    title: "Yuki Remote Desktop",
+    title: "Onyx Remote Desktop",
     icon: "papirus:devices/computer",
     launchType: "instance",
     windowIdPatterns: ["remote-host"],

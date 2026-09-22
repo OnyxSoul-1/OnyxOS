@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steam Demo</title>
+    <style>
+      :root {
+        --bg-primary: #0d1117;
+        --bg-secondary: #121a24;
+        --bg-panel: rgba(19, 24, 32, 0.92);
+        --bg-elevated: rgba(28, 35, 45, 0.96);
+        --bg-input: rgba(255, 255, 255, 0.04);
+        --border: rgba(255, 255, 255, 0.08);
+        --brand: #7b61ff;
+        --brand-strong: #9b86ff;
+        --text-primary: #edf3ff;
+        --text-secondary: #a3b1c6;
+        --text-muted: #7f8ca7;
+        --success: #8be9a9;
+        --warning: #f9c74f;
+        --danger: #ff6b7a;
+        --shadow: rgba(0, 0, 0, 0.45);
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background:
+          radial-gradient(circle at top left, rgba(123, 97, 255, 0.18), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(29, 144, 245, 0.18), transparent 26%),
+          var(--bg-primary);
+        color: var(--text-primary);
+        font-family: Inter, "Segoe UI", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 28px;
+      }
+
+      .steam-shell {
+        width: min(1500px, 100%);
+        min-height: calc(100vh - 56px);
+        background: rgba(10, 15, 22, 0.82);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(18px);
+      }
+
+      .steam-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 18px 10px;
+        background: rgba(17, 21, 29, 0.9);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .steam-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 150px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .steam-brand-mark {
+        width: 24px;
+        height: 24px;
+        display: grid;
+        place-items: center;
+        border-radius: 7px;
+        background: linear-gradient(135deg, var(--brand), #0b86ff);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+      }
+
+      .steam-menu {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 13px;
+        color: var(--text-secondary);
+      }
+
+      .steam-menu button {
+        background: transparent;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        padding: 7px 10px;
+        border-radius: 8px;
+      }
+
+      .steam-menu button:hover {
+        background: rgba(255,255,255,0.04);
+        color: var(--text-primary);
+      }
+
+      .steam-user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .steam-user-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: var(--text-primary);
+        font-size: 12px;
+      }
+
+      .steam-user-avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ef476f, #7b61ff);
+      }
+
+      .steam-nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 0 18px;
+        height: 52px;
+        background: rgba(18, 24, 32, 0.82);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .steam-tabs {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .steam-tab {
+        padding: 10px 14px;
+        border-radius: 10px;
+        color: var(--text-secondary);
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .steam-tab.active {
+        background: rgba(123, 97, 255, 0.15);
+        color: var(--text-primary);
+        box-shadow: inset 0 0 0 1px rgba(123, 97, 255, 0.38);
+      }
+
+      .steam-search {
+        margin-left: auto;
+        width: min(360px, 30vw);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--bg-input);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 9px 12px;
+        color: var(--text-secondary);
+      }
+
+      .steam-search input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: var(--text-primary);
+        font: inherit;
+        outline: none;
+      }
+
+      .steam-content {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr) 260px;
+        min-height: 800px;
+      }
+
+      .steam-sidebar,
+      .steam-aside {
+        border-right: 1px solid var(--border);
+        background: rgba(17, 22, 29, 0.7);
+      }
+
+      .steam-aside {
+        border-right: none;
+        border-left: 1px solid var(--border);
+      }
+
+      .sidebar-section {
+        padding: 16px 14px 8px;
+      }
+
+      .sidebar-label {
+        margin: 0 0 10px;
+        color: var(--text-muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .game-list,
+      .mini-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .game-item,
+      .mini-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        color: var(--text-secondary);
+        font-size: 13px;
+      }
+
+      .game-item:hover,
+      .mini-item:hover {
+        background: rgba(255,255,255,0.02);
+        border-color: var(--border);
+      }
+
+      .game-item.active {
+        background: rgba(123, 97, 255, 0.12);
+        border-color: rgba(123, 97, 255, 0.3);
+        color: var(--text-primary);
+      }
+
+      .game-dot,
+      .mini-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--brand), #4dd0ff);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+      }
+
+      .steam-main {
+        min-width: 0;
+        padding: 18px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 2.1fr;
+        gap: 18px;
+        padding: 18px;
+        background: linear-gradient(135deg, rgba(110, 87, 255, 0.12), rgba(13, 19, 29, 0.8));
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        margin-bottom: 18px;
+      }
+
+      .hero-art {
+        min-height: 220px;
+        border-radius: 16px;
+        background:
+          linear-gradient(135deg, rgba(123, 97, 255, 0.86), rgba(31, 84, 164, 0.9)),
+          url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        margin-bottom: 10px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(29px, 3vw, 44px);
+        line-height: 1.05;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .pill {
+        padding: 7px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .primary-btn,
+      .ghost-btn {
+        border: none;
+        border-radius: 12px;
+        padding: 12px 18px;
+        font: inherit;
+        cursor: pointer;
+        transition: transform 0.15s ease;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, var(--brand), #2d9cff);
+        color: white;
+        box-shadow: 0 18px 30px rgba(123, 97, 255, 0.35);
+      }
+
+      .ghost-btn {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--border);
+        color: var(--text-primary);
+      }
+
+      .primary-btn:hover,
+      .ghost-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin: 20px 0 12px;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: 19px;
+      }
+
+      .section-link {
+        color: var(--text-secondary);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .game-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+
+      .game-card {
+        background: rgba(20, 28, 36, 0.92);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      }
+
+      .game-thumb {
+        height: 160px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .game-info {
+        padding: 12px 12px 14px;
+      }
+
+      .game-card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+
+      .game-card p {
+        margin: 0 0 12px;
+        color: var(--text-secondary);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .score {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 36px;
+        padding: 5px 8px;
+        border-radius: 8px;
+        background: rgba(139, 233, 169, 0.12);
+        color: var(--success);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .steam-aside {
+        padding: 14px;
+      }
+
+      .widget {
+        padding: 14px;
+        background: rgba(20, 28, 36, 0.8);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        margin-bottom: 14px;
+      }
+
+      .widget h4 {
+        margin: 0 0 12px;
+        font-size: 14px;
+      }
+
+      .mini-item {
+        background: rgba(255,255,255,0.02);
+      }
+
+      @media (max-width: 1100px) {
+        .steam-content {
+          grid-template-columns: 220px minmax(0, 1fr);
+        }
+
+        .steam-aside { display: none; }
+      }
+
+      @media (max-width: 760px) {
+        body { padding: 12px; }
+
+        .steam-topbar,
+        .steam-nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .steam-content {
+          grid-template-columns: 1fr;
+        }
+
+        .steam-sidebar {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="steam-shell">
+      <header class="steam-topbar">
+        <div class="steam-brand">
+          <div class="steam-brand-mark">S</div>
+          <span>Steam</span>
+        </div>
+
+        <nav class="steam-menu" aria-label="Steam primary navigation">
+          <button type="button">Store</button>
+          <button type="button">Library</button>
+          <button type="button">Community</button>
+          <button type="button">Support</button>
+        </nav>
+
+        <div class="steam-user">
+          <div class="steam-user-pill">
+            <div class="steam-user-avatar"></div>
+            <span>PlayerOne</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="steam-nav">
+        <div class="steam-tabs">
+          <div class="steam-tab active">Discover</div>
+          <div class="steam-tab">New &amp; Trending</div>
+          <div class="steam-tab">Categories</div>
+          <div class="steam-tab">Wishlist</div>
+        </div>
+
+        <label class="steam-search" aria-label="Search games">
+          <span>⌕</span>
+          <input type="text" value="Search games" aria-label="Search" />
+        </label>
+      </div>
+
+      <main class="steam-content">
+        <aside class="steam-sidebar">
+          <div class="sidebar-section">
+            <p class="sidebar-label">Library</p>
+            <div class="game-list">
+              <div class="game-item active"><span class="game-dot"></span><span>Recommended</span></div>
+              <div class="game-item"><span class="game-dot"></span><span>Recently Played</span></div>
+              <div class="game-item"><span class="game-dot"></span><span>Favorites</span></div>
+              <div class="game-item"><span class="game-dot"></span><span>Steam Deck</span></div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <p class="sidebar-label">Browse</p>
+            <div class="game-list">
+              <div class="game-item"><span class="game-dot"></span><span>Action</span></div>
+              <div class="game-item"><span class="game-dot"></span><span>Adventure</span></div>
+              <div class="game-item"><span class="game-dot"></span><span>RPG</span></div>
+              <div class="game-item"><span class="game-dot"></span><span>Strategy</span></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="steam-main">
+          <div class="hero">
+            <div class="hero-art" aria-label="Featured steam game art"></div>
+            <div class="hero-copy">
+              <span class="eyebrow">Featured Title</span>
+              <h1>TABS: Totally Accurate Battle Simulator</h1>
+              <div class="hero-meta">
+                <span class="pill">Strategy</span>
+                <span class="pill">Simulation</span>
+                <span class="pill">War</span>
+              </div>
+              <p>
+                A chaotic physics battle sandbox where armies collide in a ridiculous and endlessly replayable skirmish.
+              </p>
+              <div class="hero-actions">
+                <button class="primary-btn" type="button">Play Now</button>
+                <button class="ghost-btn" type="button">Add to Wishlist</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-header">
+            <h2 class="section-title">Top Sellers</h2>
+            <span class="section-link">View all</span>
+          </div>
+
+          <div class="game-grid" id="gameGrid"></div>
+        </section>
+
+        <aside class="steam-aside">
+          <div class="widget">
+            <h4>Friends</h4>
+            <div class="mini-list">
+              <div class="mini-item"><span class="mini-dot"></span><span>Nova</span></div>
+              <div class="mini-item"><span class="mini-dot"></span><span>Pixel</span></div>
+              <div class="mini-item"><span class="mini-dot"></span><span>Rin</span></div>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h4>Trending</h4>
+            <div class="mini-list">
+              <div class="mini-item"><span class="mini-dot"></span><span>Helltaker</span></div>
+              <div class="mini-item"><span class="mini-dot"></span><span>Inscryption</span></div>
+              <div class="mini-item"><span class="mini-dot"></span><span>Slime Rancher</span></div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      const games = [
+        {
+          title: "Slime Rancher",
+          tag: "Farming Sim",
+          score: "88",
+          description: "Collect slimes, expand your ranch, and explore a colorful alien world.",
+          image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          title: "Helltaker",
+          tag: "Puzzle",
+          score: "91",
+          description: "A stylish puzzle game with a devilishly cute cast and sharp humor.",
+          image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          title: "Inscryption",
+          tag: "Card Game",
+          score: "94",
+          description: "A deeply atmospheric deckbuilder full of mystery, danger, and twists.",
+          image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          title: "Night in the Woods",
+          tag: "Narrative",
+          score: "89",
+          description: "Explore a sleepy town, connect with friends, and uncover emotional stories.",
+          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          title: "Plague Inc",
+          tag: "Strategy",
+          score: "86",
+          description: "Infect the world and outsmart humanity in a high-stakes strategy simulation.",
+          image: "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          title: "Cat Goes Fishing",
+          tag: "Relaxing",
+          score: "82",
+          description: "Cast, catch, and chill in a charming little fishing game.",
+          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+        }
+      ];
+
+      const grid = document.getElementById("gameGrid");
+      games.forEach((game) => {
+        const card = document.createElement("article");
+        card.className = "game-card";
+        card.innerHTML = `
+          <div class="game-thumb" style="background-image: url('${game.image}')"></div>
+          <div class="game-info">
+            <h3>${game.title}</h3>
+            <p>${game.description}</p>
+            <div class="hero-meta">
+              <span class="score">${game.score}</span>
+              <span class="pill">${game.tag}</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

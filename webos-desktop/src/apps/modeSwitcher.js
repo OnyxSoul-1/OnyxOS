@@ -25,7 +25,7 @@ const CARD_ENTER_CLASS = "intro-tour-enter";
 let switcher = null;
 
 const MODES = [
-  { label: "YukiOS", icon: "fas fa-snowflake", mode: "reset", description: "Default desktop experience" },
+  { label: "OnyxOS", icon: "fas fa-snowflake", mode: "reset", description: "Default desktop experience" },
   { label: "MacOS", icon: "fab fa-apple", mode: "mac", description: "Mac-style desktop with dock" },
   { label: "SteamDeck", icon: "fas fa-gamepad", mode: "steamdeck", description: "Steam Deck gaming interface" },
   { label: "ChromeOS", icon: "fab fa-chrome", mode: "chromeos", description: "Chromebook-style desktop" },

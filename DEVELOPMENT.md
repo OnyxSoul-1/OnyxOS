@@ -1,6 +1,6 @@
-# Development Guide - YukiOS
+# Development Guide - OnyxOS
 
-This guide covers how to create new applications, add functionalities, and contribute to YukiOS.
+This guide covers how to create new applications, add functionalities, and contribute to OnyxOS.
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@ This guide covers how to create new applications, add functionalities, and contr
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/Reeyuki/YukiOS
+   git clone https://github.com/Reeyuki/OnyxOS
    cd yukios
    ```
 
@@ -62,7 +62,7 @@ This guide covers how to create new applications, add functionalities, and contr
 
 ## Creating a New App
 
-YukiOS apps extend `BaseApp` and build their UI imperatively in the `open()` method. Follow these steps to create a new
+OnyxOS apps extend `BaseApp` and build their UI imperatively in the `open()` method. Follow these steps to create a new
 application:
 
 ### Step 1: Create the App File
@@ -532,7 +532,7 @@ integrations.
 
 ## Styling Guidelines
 
-YukiOS uses a dark glassmorphism theme with a comprehensive theming system.
+OnyxOS uses a dark glassmorphism theme with a comprehensive theming system.
 
 ### CSS Variables
 
@@ -604,7 +604,7 @@ Never use native browser checkboxes, plain inputs, or dropdowns. Always use:
 
 ## Creating Themes
 
-YukiOS has a comprehensive theming system with 25+ built-in themes and support for custom themes. Themes are managed via
+OnyxOS has a comprehensive theming system with 25+ built-in themes and support for custom themes. Themes are managed via
 `src/shared/themeEngine.js`.
 
 ### Theme Structure

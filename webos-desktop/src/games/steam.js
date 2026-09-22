@@ -8,159 +8,28 @@ import { StorageKeys, os, createElement } from "../framework.js";
 import { showContextMenu } from "../shared/contextMenu.js";
 import { startSteamTour } from "../apps/steamIntro.js";
 import { SteamSettings, openSteamSettingsWindow, buildSettingsPageHTML, getGridMin } from "./steamSettings.js";
+import { appMap } from "./gamesList.js";
 
-export const STORE_GAMES = [
-  {
-    app: "tabs",
-    icon: resolveIconUrl("static/icons/tabs.webp"),
-    title: "TABS: Totaly Accurate Battle Simulator",
-    tags: ["Strategy", "Simulation", "War"]
-  },
-  {
-    app: "catGoesFishing",
-    icon: resolveIconUrl("static/icons/cat.webp"),
-    title: "Cat Goes Fishing",
-    tags: ["Fishing", "Simulation", "Relaxing", "Casual"]
-  },
-  {
-    app: "angryBirds2",
-    icon: resolveIconUrl("static/icons/angryBirds2.webp"),
-    title: "Angry Birds 2",
-    tags: ["Slingshot", "Physics", "Puzzle"]
-  },
-  {
-    app: "slimeRancher",
-    icon: resolveIconUrl("static/icons/slime.webp"),
-    title: "Slime Rancher",
-    tags: ["Farming Sim", "Exploration", "First-Person"]
-  },
-  {
-    app: "lobotomyCorporation",
-    icon: resolveIconUrl("static/icons/lobotomy.webp"),
-    title: "Lobotomy Corporation,",
-    tags: ["Strategy", "Simulation"]
-  },
-  {
-    app: "plagueIncEvolved",
-    icon: resolveIconUrl("static/icons/plague.webp"),
-    title: "Plague Inc Evolved",
-    tags: ["Strategy", "Simulation"]
-  },
-  {
-    app: "pttr",
-    icon: resolveIconUrl("static/icons/pttr.webp"),
-    title: "Paint the Town Red",
-    tags: ["Action", "Fighting", "Voxel"]
-  },
-  {
-    app: "fiveNightsAtFrickbears3",
-    icon: resolveIconUrl("static/icons/fiveNightsAtFrickbears.webp"),
-    title: "Five Nights At Frickbears 3",
-    tags: ["Horror", "Survival"]
-  },
-  {
-    app: "helltaker",
-    icon: resolveIconUrl("static/icons/helltaker.jpg"),
-    title: "Helltaker",
-    tags: ["Puzzle", "Anime"]
-  },
-  {
-    app: "inscryption",
-    icon: resolveIconUrl("static/icons/inscryption.webp"),
-    title: "Inscryption",
-    tags: ["Card Game", "Roguelike"]
-  },
-  {
-    app: "nightInTheWoods",
-    icon: resolveIconUrl("static/icons/night.webp"),
-    title: "Night In The Woods",
-    tags: ["Adventure", "Narrative"]
-  },
-  {
-    app: "daddy",
-    icon: resolveIconUrl("static/icons/daddy.webp"),
-    title: "Who's Your Daddy",
-    tags: ["Casual", "Multiplayer"]
-  },
-  {
-    app: "suicideGuy",
-    icon: resolveIconUrl("static/icons/suicideguy.webp"),
-    title: "Suicide Guy",
-    tags: ["Puzzle", "Platformer"]
-  },
-  {
-    app: "ytlifeomg",
-    icon: resolveIconUrl("static/icons/yt.webp"),
-    title: "Youtubers Life Omg",
-    tags: ["Simulation", "Management"]
-  },
-  {
-    app: "inStarsAndTime",
-    icon: resolveIconUrl("static/icons/star.webp"),
-    title: "In Stars And Time",
-    tags: ["RPG", "Story"]
-  },
-  {
-    app: "slenderina",
-    icon: resolveIconUrl("static/icons/slenderina.webp"),
-    title: "Slenderina The Cellar",
-    tags: ["Horror", "Action"]
-  },
-  {
-    app: "wheresBaldi",
-    icon: resolveIconUrl("static/icons/wheresBaldi.webp"),
-    title: "Where's Baldi",
-    tags: ["Horror", "Action"]
-  },
-  {
-    app: "baldiBalds",
-    icon: resolveIconUrl("static/icons/baldiBalds.webp"),
-    title: "Baldi Balds The Universe",
-    tags: ["Horror", "Action"]
-  },
-  {
-    app: "baldisBasicsTeachingOnTwos",
-    icon: resolveIconUrl("static/icons/baldisBasicsTeachingOnTwos.webp"),
-    title: "Baldi's Basics: Teaching On Twos",
-    tags: ["Horror", "Education"]
-  },
-  {
-    app: "playtimeHellBear5van",
-    icon: resolveIconUrl("static/icons/playtimeHellBear5van.webp"),
-    title: "Playtime Hell & Bear 5 Van",
-    tags: ["Horror", "Action"]
-  },
-  {
-    app: "antidisestablishmentarianism",
-    icon: resolveIconUrl("static/icons/antiDisestablishism.webp"),
-    title: "Antidisestablishmentarianism",
-    tags: ["Puzzle", "Indie", "Education"]
-  },
-  {
-    app: "minusThree",
-    icon: resolveIconUrl("static/icons/minusThree.webp"),
-    title: "Minus Three",
-    tags: ["Puzzle", "Indie", "Education"]
-  },
-  {
-    app: "three",
-    icon: resolveIconUrl("static/icons/three.webp"),
-    title: "Three",
-    tags: ["Puzzle", "Indie", "Education"]
-  },
-  {
-    app: "theMathIsLeaking",
-    icon: resolveIconUrl("static/icons/theMathIsLeaking.webp"),
-    title: "The Math Is Leaking",
-    tags: ["Puzzle", "Education"]
-  },
-  {
-    app: "pneumonoultramicroscopicsilicovolcanoconiosis",
-    icon: resolveIconUrl("static/icons/pneumo.webp"),
-    title: "Pneumonoultramicroscopicsilicovolcanoconiosis",
-    tags: ["Puzzle", "Educational", "Word", "Indie"]
-  }
-];
+const STORE_DEFAULT_TAGS = ["Game", "Indie", "Casual"];
+
+export const STORE_GAMES = Object.entries(appMap)
+  .filter(([, meta]) => meta && meta.type === "game")
+  .map(([appId, meta]) => {
+    const iconValue = typeof meta.icon === "string" ? meta.icon : "";
+    const icon = iconValue
+      ? resolveIconUrl(iconValue.replace(/^\/+/, ""))
+      : resolveIconUrl("static/icons/steam.webp");
+
+    return {
+      app: appId,
+      icon,
+      title: meta.title || appId,
+      tags: Array.isArray(descriptionMap[appId]?.tags) && descriptionMap[appId].tags.length > 0
+        ? descriptionMap[appId].tags
+        : STORE_DEFAULT_TAGS
+    };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title));
 
 export function getCdnBase() {
   return CDN_CONFIG.repos.main.base;
@@ -361,7 +230,7 @@ export function initDropdowns(container, navigateTo, openFriendsWindow, wm) {
         { id: "up-friends", action: "up-friends", label: "Friends & Chat", icon: "fa-user-group" },
         { id: "up-settings", action: "up-settings", label: "Settings", icon: "fa-gear" },
         { id: "up-account", action: "up-account", label: "Account", icon: "fa-user-lock" },
-        { id: "up-social-tour", action: "up-social-tour", label: "Yuki Steam Tour", icon: "fa-question-circle" }
+        { id: "up-social-tour", action: "up-social-tour", label: "Onyx Steam Tour", icon: "fa-question-circle" }
       ];
       const handlers = {
         "up-my-profile": () => navigateTo("user"),

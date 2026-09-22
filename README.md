@@ -1,20 +1,20 @@
-# YukiOS: Multi-Environment Web Desktop for the Browser
+# OnyxOS: Multi-Environment Web Desktop for the Browser
 
 <div align="center">
 
 [![License](https://img.shields.io/github/license/Reeyuki/yukios?style=for-the-badge&color=blue)](LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord)](https://discord.gg/wufbWFwr4G)
 
-**Try it now:** [yukios.pages.dev](https://yukios.pages.dev) · [yukios.vercel.app](https://yukios.vercel.app) ·
-[yukios.netlify.app](https://yukios.netlify.app) · [yukiwebos.github.io](https://yukiwebos.github.io)
+**Try it now:** [OnyxOS demo](https://yukios.pages.dev) · [OnyxOS preview](https://yukios.vercel.app) ·
+[OnyxOS deploy](https://yukios.netlify.app) · [OnyxOS GitHub Pages](https://yukiwebos.github.io)
 
 </div>
 
 > A browser-native multi-environment web desktop. Switch seamlessly between floating desktops (macOS, ChromeOS), dynamic
-> BSP tiling (Hyprland), game consoles (Yuki Deck), all running on a single persistent client-side core built in vanilla
-> JavaScript (no UI framework).
+> BSP tiling, Steam and Steam Deck-inspired game-console layouts, and persistent web apps built on a single client-side
+> core in vanilla JavaScript with no UI framework.
 
-YukiOS is not just another web desktop. It is a single browser tab that rewrites its entire window management paradigm,
+OnyxOS is not just another web desktop. It is a single browser tab that rewrites its entire window management paradigm,
 UI chrome, input model, and workspace semantics at runtime without destroying open applications, file system state, or
 user context. One session, six switchable desktop modes.
 
@@ -27,18 +27,18 @@ client-side filesystem, and it is built entirely in vanilla JavaScript without a
 
 |                                                                                                             |                                                                                            |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Mac Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/mac.png)                          | ![YukiDeck](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/yuki-deck.png)   |
-| ![ChromeOS Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/chromeos.png)                | ![Start Menu](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/startmenu.png) |
-| ![Workspaces](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/workspaces.png)                 | ![Widgets](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/widgets.png)      |
-| ![WASM Terminal Apps](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/btop-lavat-cmatrix.png) | ![3D Os Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/3d.png)        |
-| ![Remote Desktop](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/remote.png)                 | ![Steam](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/steam.png)          |
-| ![Steam Overlay](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/overlay.png)                 | ![Tiling Mode](https://raw.githubusercontent.com/Reeyuki/YukiOS/main/.github/tiling.png)   |
+| ![Mac Mode](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/mac.png)                          | ![YukiDeck](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/yuki-deck.png)   |
+| ![ChromeOS Mode](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/chromeos.png)                | ![Start Menu](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/startmenu.png) |
+| ![Workspaces](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/workspaces.png)                 | ![Widgets](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/widgets.png)      |
+| ![WASM Terminal Apps](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/btop-lavat-cmatrix.png) | ![3D Os Mode](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/3d.png)        |
+| ![Remote Desktop](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/remote.png)                 | ![Steam](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/steam.png)          |
+| ![Steam Overlay](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/overlay.png)                 | ![Tiling Mode](https://raw.githubusercontent.com/Reeyuki/OnyxOS/main/.github/tiling.png)   |
 
 ---
 
 # Desktop Environments
 
-YukiOS ships six complete desktop paradigms, each a switchable mode of the same core. Pick any mode from the session
+OnyxOS ships six complete desktop paradigms, each a switchable mode of the same core. Pick any mode from the session
 picker at login, or switch live. Every mode shares the same running applications, open files, persistent settings, and
 IndexedDB-backed filesystem.
 
@@ -55,14 +55,14 @@ A full macOS-inspired desktop with top menu bar, animated fisheye dock, Launchpa
 - **Launchpad** (F4) with a fullscreen app grid, glassmorphism backdrop, live search, slide-from-dock animation, bigger
   icons on hover, and hover-zoom, pinned to the Dock in Mac Mode
 
-## 🎮 Yuki Deck Mode
+## 🎮 Onyx Deck Mode
 
-A fullscreen, animated and full-sfx game-console-style environment you can pick at login, controlled with a gamepad or
-keyboard/mouse, with home feed and library management.
+A fullscreen, animated game-console-style environment you can pick at login, controlled with a gamepad or keyboard/mouse,
+with a home feed, library management, and a Steam-inspired layout.
 
 - **Home feed** with new releases, friends activity, and recommended games
 - **Game library** to search, sort by name, mark favorites, and build collections
-- **Quick Actions Panel** to manage deck quick settings and friends list
+- **Quick Actions Panel** to manage performance, friends, and system controls
 - **In-game overlay** (Shift+Tab) with playtime tracking, friends panel, screenshot capture, performance monitor, and
   in-overlay web browser
 
@@ -95,10 +95,10 @@ picker, with per-workspace tree layouts and live config reloading.
 A 3d fps game where player can walk around in a room and interact with computer monitor, grab and launch game cases that
 hide game and open inside os page, or play sorting minigame
 
-## ⚡ Yuki Native Session
+## ⚡ Onyx Native Session
 
 The default hybrid desktop layout, a modern, high-density multitasking environment blending familiar desktop conventions
-with YukiOS-specific innovations.
+with OnyxOS-specific innovations and the latest Steam, Deck, and ChromeOS workflow upgrades.
 
 - Full floating window management with snapping, workspaces, and animations
 - Desktop widgets, system tray, notification center
@@ -109,12 +109,12 @@ with YukiOS-specific innovations.
 
 ## Architecture
 
-YukiOS uses a shared-state architecture. Switching from Hyprland tiling to macOS shell does not destroy your open
+OnyxOS uses a shared-state architecture. Switching from Hyprland tiling to macOS shell does not destroy your open
 applications, file system, or workspace context. The UI layout engine morphs around the running state.
 
 ```
                       ┌───────────────────────────────────────┐
-                     │        YukiOS Central Core            │
+                     │        OnyxOS Central Core            │
                      │   (Application Registry & App Layer)  │
                       └──────────────────┬────────────────────┘
                                          │
@@ -130,7 +130,7 @@ applications, file system, or workspace context. The UI layout engine morphs aro
         │                               │                              │
         ▼                               ▼                              ▼
 ┌─────────────────┐            ┌─────────────────┐            ┌─────────────────┐
-│  Yuki Deck UI   │            │ GNOME Shell     │            │Windows(Upcoming)│
+│ Onyx Deck UI    │            │ GNOME Shell     │            │Windows(Upcoming)│
 │ (Gamepad Focus) │            │   (Upcoming)    │            │ (XP/Win7/10/11) │
 └───────┬─────────┘            └────────┬────────┘            └────────┬────────┘
         │                               │                              │
@@ -275,20 +275,20 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 
 - Custom App Creator for adding web shortcuts with auto-detected favicons and per-app CORS proxy
 - Scramjet/BareMux-based web app proxy for embedding third-party sites
-- URL parameter launch: `?app=`, `?game=`, `?deck=1` for Yuki Deck Mode
+- URL parameter launch: `?app=`, `?game=`, `?deck=1` for Onyx Deck Mode
 
 </details>
 
 <details>
 <summary><strong>📂 Local Files & Dev Server (virtual, in-browser)</strong></summary>
 
-- `python -m http.server [port] [--directory DIR]` inside YukiOS Terminal serves the virtual filesystem at
+- `python -m http.server [port] [--directory DIR]` inside OnyxOS Terminal serves the virtual filesystem at
   `http://localhost:PORT` via the in-browser `PortManager` (`src/services/PortManager.js:1`,
   `src/terminal/httpServer.js:80`). Press `Ctrl+C` to stop. This does not expose a host OS server
-- Viewable only in Yuki Browser, which handles `localhost`/`127.0.0.1`/`0.0.0.0:PORT`, `fs://`, `file://`, `/abs/path`
+- Viewable only in the Onyx Browser, which handles `localhost`/`127.0.0.1`/`0.0.0.0:PORT`, `fs://`, `file://`, `/abs/path`
   natively without proxy. Includes directory listings, HTML with relative asset rewrites, and media/text/download views
 - Entirely virtual with no real TCP. Unregistered ports show `ERR_CONNECTION_REFUSED` with dino minigame. Use it to
-  preview local sites and assets inside YukiOS
+  preview local sites and assets inside OnyxOS
 
 </details>
 
@@ -310,20 +310,20 @@ applications, file system, or workspace context. The UI layout engine morphs aro
   - `file` command with content-based magic byte detection (10+ formats)
   - `neofetch` with GPU/RAM/browser/engine detection
   - Pipeline (`|`), redirects (`>`/`>>`), command chaining (`&&`/`||`/`;`), Ctrl+R reverse search
-  - `yuki` command for OS control (power mode, brightness, themes, wallpaper, workspaces, app management, DND,
+  - `onyx` command for OS control (power mode, brightness, themes, wallpaper, workspaces, app management, DND,
     notifications)
-  - `python -m http.server [port]` (virtual, YukiOS only) serves VFS dir on `localhost:PORT` for preview in Yuki Browser
-    inside YukiOS
+  - `python -m http.server [port]` (virtual, OnyxOS only) serves VFS dir on `localhost:PORT` for preview in the Onyx
+    Browser inside OnyxOS
   - **[lavat](https://github.com/Reeyuki/lavat-web)**, a lava lamp simulation with customizable metaballs and gravity;
     Emscripten WASM port (by Reeyuki) of the original C program, runs fully client-side
   - **[cmatrix](https://github.com/Reeyuki/cmatrix/)**, a Matrix rain animation with color, speed, and character modes;
     browser-native JS reimplementation (by Reeyuki)
   - **[btop](https://github.com/Reeyuki/btop-emscripten)**, a real-time resource monitor (CPU, memory, disks, network,
-    processes); Emscripten WASM port (by Reeyuki) that feeds live host system data from YukiOS into the emulated
+    processes); Emscripten WASM port (by Reeyuki) that feeds live host system data from OnyxOS into the emulated
     terminal
 - Notepad
 - Markdown Viewer
-- Yuki Code
+- Onyx Code
 - VS Code
 - Run (Ctrl+R quick-launch)
 - Settings
@@ -334,17 +334,17 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 - Setup Wizard
 - Achievements
 - Profile Customizer
-- Yuki AI Assistant (WebLLM)
+- Onyx AI Assistant (WebLLM)
 - Storage Editor
-- Yuki Convert
+- Onyx Convert
 - Clipboard Manager
 - Emoji Selector
-- Yuki Dev Tools (It Tools)
+- Onyx Dev Tools (It Tools)
 - Dev Tools (Eruda)
 - Weather
 - News
 - Aquarium
-- YukiOS Guide
+- OnyxOS Guide
 - Display Performance
 - Virtual Machine Manager
 - About (system information)
@@ -384,13 +384,13 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 <details>
 <summary><strong>🌐 Browser & Internet</strong></summary>
 
-- Yuki Browser with Scramjet Proxy, Sidebar Tabs mode, bookmarks, proxy, Tor, history, dark mode, tab system, and
+- Onyx Browser with Scramjet Proxy, Sidebar Tabs mode, bookmarks, proxy, Tor, history, dark mode, tab system, and
   screenshot
 - WebTorrent Client
 - Tor Manager, a WASM-based Tor client with Snowflake transport
-- Yuki Steam launcher
+- Onyx Steam launcher
 - Maps (interactive maps with OpenStreetMap and Google Maps support)
-- Yuki Remote Desktop (stream your full desktop to any browser via WebRTC with remote input control)
+- Onyx Remote Desktop (stream your full desktop to any browser via WebRTC with remote input control)
 
 </details>
 
@@ -410,17 +410,17 @@ applications, file system, or workspace context. The UI layout engine morphs aro
 <details>
 <summary><strong>🎮 Games & Emulation</strong></summary>
 
-- Yuki Emulator (EmulatorJS) for NES, SNES, GB, GBA, N64, PSX, and more
+- Onyx Emulator (EmulatorJS) for NES, SNES, GB, GBA, N64, PSX, and more
 - Ruffle (Flash)
 - JsDos (DOS)
 - Virtual 86 (x86)
 - Azahar (3DS Emulator)
 - Flashpoint Database
-- Yuki Steam storefront with friends, community, playtime tracking and collection system
+- Onyx Steam storefront with friends, community, playtime tracking and collection system
 - Roblox (browse and play Roblox games)
 - 3D Room (first-person 3D room where your game library comes to life)
 
-### Yuki Steam In-Game Overlay
+### Onyx Steam In-Game Overlay
 
 Shift+Tab overlay with draggable, resizable panels for any running game:
 
@@ -463,7 +463,7 @@ A native Electron wrapper for enhanced desktop integration:
 
 - Native game windows that launch in their own OS-level window with auto-hide menu bar
 - Remote host to stream your real desktop with mouse/keyboard control from any device
-- Autostart YukiOS on system startup
+- Autostart OnyxOS on system startup
 - Browse real files via home directory drive in Explorer
 
 The web-only version runs in any browser with all core features intact; the Electron app adds native OS integration on
@@ -510,4 +510,4 @@ top.
 
 ## License
 
-YukiOS is licensed under the MIT License, see [LICENSE](LICENSE) for details. If you use any part of this project, including code, design, themes or assets, whether you fork or copy, please retain the original copyright notice and kindly credit **YukiOS by Reeyuki** at https://github.com/Reeyuki/YukiOS.
+OnyxOS is licensed under the MIT License, see [LICENSE](LICENSE) for details. If you use any part of this project, including code, design, themes or assets, whether you fork or copy, please retain the original copyright notice and kindly credit **OnyxOS by Reeyuki** at https://github.com/Reeyuki/OnyxOS.

@@ -9,13 +9,13 @@ const CATEGORY_LABELS = {
   global: "Global & System",
   desktop: "Desktop & Files",
   notepad: "Notepad",
-  browser: "Yuki Browser",
+  browser: "Onyx Browser",
   calc: "Calculator",
   calendar: "Calendar",
   terminal: "Terminal",
   office: "Office",
   games: "Games",
-  steamdeck: "Yuki Deck",
+  steamdeck: "Onyx Deck",
   custom: "Custom"
 };
 
@@ -81,7 +81,7 @@ export function mountShortcutsPanel(container, options = {}) {
           <div class="sc-nav-item" data-cat="all"><i class="fas fa-keyboard"></i>All Shortcuts</div>
           <div class="sc-nav-item" data-cat="global"><i class="fas fa-globe"></i>Global & System</div>
           <div class="sc-nav-item" data-cat="notepad"><i class="fas fa-file-alt"></i>Notepad</div>
-          <div class="sc-nav-item" data-cat="browser"><i class="fas fa-compass"></i>Yuki Browser</div>
+          <div class="sc-nav-item" data-cat="browser"><i class="fas fa-compass"></i>Onyx Browser</div>
           <div class="sc-nav-item" data-cat="calc"><i class="fas fa-calculator"></i>Calculator</div>
           <div class="sc-nav-item" data-cat="calendar"><i class="fas fa-calendar-alt"></i>Calendar</div>
           <div class="sc-nav-item" data-cat="terminal"><i class="fas fa-terminal"></i>Terminal</div>

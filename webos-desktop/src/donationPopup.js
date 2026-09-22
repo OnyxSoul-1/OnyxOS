@@ -17,9 +17,9 @@ function getOverlayHTML() {
         <div class="donation-heart">
           <i class="fas fa-heart"></i>
         </div>
-        <div class="donation-title">Support YukiOS</div>
+        <div class="donation-title">Support OnyxOS</div>
         <div class="donation-message">
-          YukiOS is built and maintained by one person in their free time. It is 100% free with no locked features and no paid tiers, so this donation is purely optional.
+          OnyxOS is built and maintained by one person in their free time. It is 100% free with no locked features and no paid tiers, so this donation is purely optional.
           <br><br>
           Your support keeps development active and helps fund new features.
           <br><br>

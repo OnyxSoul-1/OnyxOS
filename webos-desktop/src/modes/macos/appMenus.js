@@ -40,7 +40,7 @@ export const DEFAULT_SYSTEM_MENUS = [
   {
     label: "Finder",
     items: [
-      { label: "About YukiOS", action: "about:open" },
+      { label: "About OnyxOS", action: "about:open" },
       { type: "separator" },
       { label: "Settings", action: "settings:open" },
       { label: "Command Palette", action: "palette:open" },
@@ -50,7 +50,7 @@ export const DEFAULT_SYSTEM_MENUS = [
       { label: "Show All", action: "window:showAll" },
       { type: "separator" },
       { label: "Lock Screen", action: "session:lock" },
-      { label: "Log Out YukiOS", action: "session:logout" }
+      { label: "Log Out OnyxOS", action: "session:logout" }
     ]
   },
   {
@@ -129,7 +129,7 @@ export const DEFAULT_SYSTEM_MENUS = [
   {
     label: "Help",
     items: [
-      { label: "YukiOS Guide", action: "guide:open" },
+      { label: "OnyxOS Guide", action: "guide:open" },
       { label: "What\u2019s New", action: "news:open" },
       { type: "separator" },
       { label: "Keyboard Shortcuts", action: "shortcuts:open" },
@@ -137,7 +137,7 @@ export const DEFAULT_SYSTEM_MENUS = [
       { type: "separator" },
       { label: "Report Issue", action: "help:report" },
       { label: "Achievements", action: "achievements:open" },
-      { label: "About YukiOS", action: "about:open" }
+      { label: "About OnyxOS", action: "about:open" }
     ]
   }
 ];

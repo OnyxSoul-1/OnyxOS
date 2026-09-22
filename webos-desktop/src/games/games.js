@@ -161,32 +161,11 @@ export function getGameName(appId) {
 
 const GAMES_APP_EXCLUDED = new Set(["TMNP", "vscode", "paint", "photopea", "liventcord"]);
 
-export const HIGHLIGHTED_GAMES = new Set([
-  "tabs",
-  "lobotomyCorporation",
-  "slimeRancher",
-  "plagueIncEvolved",
-  "pttr",
-  "helltaker",
-  "passpartout",
-  "inStarsAndTime",
-  "inscryption",
-  "nightInTheWoods",
-  "daddy",
-  "yt",
-  "ytlifeomg",
-  "suicideGuy",
-  "antidisestablishmentarianism",
-  "theMathIsLeaking",
-  "minusThree",
-  "three",
-  "fiveNightsAtFrickbears3",
-  "baldisBasicsTeachingOnTwos",
-  "playtimeHellBear5van",
-  "baldiBalds",
-  "pneumo",
-  "wheresBaldi"
-]);
+export const HIGHLIGHTED_GAMES = new Set(
+  Object.entries(appMap)
+    .filter(([, meta]) => meta && meta.type === "game")
+    .map(([appId]) => appId)
+);
 
 const FLASH_EMUPEDIA_EXCLUDED = new Set([
   "doom",
@@ -567,7 +546,7 @@ class GameWindowRenderer {
     this.newsItems =
       STEAM_NEWS_ITEMS.length > 0
         ? STEAM_NEWS_ITEMS.flat()
-        : [{ image: "fas fa-snowflake", title: "Yuki Steam App Added", date: "May 1, 2026" }];
+        : [{ image: "fas fa-snowflake", title: "Onyx Steam App Added", date: "May 1, 2026" }];
     this.imgObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -597,7 +576,7 @@ class GameWindowRenderer {
       return descriptionMap[appId];
     }
     const title = appMap[appId]?.title || appId;
-    return `Experience ${title} on YukiOS. This game is part of your Yuki Steam library.`;
+    return `Experience ${title} on OnyxOS. This game is part of your Onyx Steam library.`;
   }
 
   setCurrentGame(appId) {

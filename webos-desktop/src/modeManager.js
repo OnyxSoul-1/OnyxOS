@@ -16,31 +16,31 @@ export const MODE_DEFS = {
     cssClass: "mac-mode",
     cssTarget: "html",
     storageKey: StorageKeys.macOsControls,
-    label: "Yuki Mac Desktop"
+    label: "Onyx Mac Desktop"
   },
   [MODES.TILING]: {
     cssClass: "tiling-active",
     cssTarget: "body",
     storageKey: StorageKeys.tilingEnabled,
-    label: "Yuki Tiling VM"
+    label: "Onyx Tiling VM"
   },
   [MODES["3D"]]: {
     cssClass: "3d-mode",
     cssTarget: "html",
     storageKey: null,
-    label: "Yuki 3D Desktop"
+    label: "Onyx 3D Desktop"
   },
   [MODES.CHROME_OS]: {
     cssClass: "chromeos-mode",
     cssTarget: "html",
     storageKey: StorageKeys.chromeOsMode,
-    label: "Yuki Chrome OS"
+    label: "Onyx Chrome OS"
   },
   [MODES.STEAMDECK]: {
     cssClass: "steamdeck-mode",
     cssTarget: "html",
     storageKey: StorageKeys.steamDeckMode,
-    label: "Yuki Steam Client"
+    label: "Onyx Steam Client"
   }
 };
 

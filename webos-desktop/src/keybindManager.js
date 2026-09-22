@@ -205,7 +205,7 @@ export const KEYBIND_DEFINITIONS = [
   {
     id: "steam.overlay",
     defaultKeys: ["Shift", "Tab"],
-    desc: "Open Yuki Steam overlay while in-game",
+    desc: "Open Onyx Steam overlay while in-game",
     cat: "games",
     icon: "papirus:apps/steam"
   },
@@ -1052,7 +1052,7 @@ export const KEYBIND_DEFINITIONS = [
   {
     id: "global.launchBrowser",
     defaultKeys: ["Alt", "F"],
-    desc: "Open Yuki Browser",
+    desc: "Open Onyx Browser",
     cat: "global",
     icon: "papirus:apps/internet-web-browser"
   },
@@ -1276,7 +1276,7 @@ export const KEYBIND_DEFINITIONS = [
   {
     id: "mac.about",
     defaultKeys: ["Meta", ","],
-    desc: "Open About YukiOS",
+    desc: "Open About OnyxOS",
     cat: "mac",
     icon: "papirus:actions/help-about",
     hidden: true
@@ -1364,7 +1364,7 @@ export const KEYBIND_DEFINITIONS = [
   {
     id: "mac.guide",
     defaultKeys: ["Meta", "Shift", "/"],
-    desc: "Open YukiOS Guide",
+    desc: "Open OnyxOS Guide",
     cat: "mac",
     icon: "papirus:apps/accessories-dictionary",
     hidden: true
@@ -1505,56 +1505,56 @@ export const KEYBIND_DEFINITIONS = [
   {
     id: "steamdeck.openQuickAccess",
     defaultKeys: ["Ctrl", "Shift", "Q"],
-    desc: "Open Yuki Deck Quick Access panel",
+    desc: "Open Onyx Deck Quick Access panel",
     cat: "steamdeck",
     icon: "papirus:status/battery-020"
   },
   {
     id: "steamdeck.home",
     defaultKeys: ["Ctrl", "Shift", "H"],
-    desc: "Return to Yuki Deck Home",
+    desc: "Return to Onyx Deck Home",
     cat: "steamdeck",
     icon: "papirus:actions/go-home"
   },
   {
     id: "steamdeck.moveUp",
     defaultKeys: ["ArrowUp"],
-    desc: "Move focus up in Yuki Deck",
+    desc: "Move focus up in Onyx Deck",
     cat: "steamdeck",
     icon: "papirus:actions/go-up"
   },
   {
     id: "steamdeck.moveDown",
     defaultKeys: ["ArrowDown"],
-    desc: "Move focus down in Yuki Deck",
+    desc: "Move focus down in Onyx Deck",
     cat: "steamdeck",
     icon: "papirus:actions/go-down"
   },
   {
     id: "steamdeck.moveLeft",
     defaultKeys: ["ArrowLeft"],
-    desc: "Move focus left in Yuki Deck",
+    desc: "Move focus left in Onyx Deck",
     cat: "steamdeck",
     icon: "papirus:actions/go-previous"
   },
   {
     id: "steamdeck.moveRight",
     defaultKeys: ["ArrowRight"],
-    desc: "Move focus right in Yuki Deck",
+    desc: "Move focus right in Onyx Deck",
     cat: "steamdeck",
     icon: "papirus:actions/go-next"
   },
   {
     id: "steamdeck.confirm",
     defaultKeys: ["Enter"],
-    desc: "Confirm selection in Yuki Deck",
+    desc: "Confirm selection in Onyx Deck",
     cat: "steamdeck",
     icon: "papirus:actions/object-select"
   },
   {
     id: "steamdeck.back",
     defaultKeys: ["Escape"],
-    desc: "Go back in Yuki Deck",
+    desc: "Go back in Onyx Deck",
     cat: "steamdeck",
     icon: "papirus:actions/go-previous"
   }

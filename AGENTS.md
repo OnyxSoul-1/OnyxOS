@@ -1,4 +1,4 @@
-# YukiOS - Agent Reference
+# OnyxOS - Agent Reference
 
 You are working under webos-desktop directory. when src is mentioned it means webos-desktop/
 
@@ -94,7 +94,7 @@ Write modular, clean, and DRY code. Follow these principles:
 
 ## Styling System
 
-YukiOS uses a dark glassmorphism theme with a comprehensive theming system. All rules below are non-negotiable.
+OnyxOS uses a dark glassmorphism theme with a comprehensive theming system. All rules below are non-negotiable.
 
 - **CSS Variables**: Use `--brand` (accent), `--text-primary`, `--text-secondary`, `--bg-primary`, `--bg-secondary`,
   `--glass`, `--glass-border`, `--error`. Never introduce new hues or hardcoded values.
@@ -537,7 +537,7 @@ entries — no app class needed.
 | AboutApp            | `apps/about.js`                 | System info, version, credits                                               |
 | What's New          | `apps/news.js`                  | News aggregation with unread bubble                                         |
 | WeatherApp          | `apps/weather.js`               | Current weather and forecast                                                |
-| YukiOS Guide        | `apps/yukiOsGuide.js`           | Interactive guide and tutorial system                                       |
+| OnyxOS Guide        | `apps/yukiOsGuide.js`           | Interactive guide and tutorial system                                       |
 | Clipboard Manager   | `apps/clipboardApp.js`          | Clipboard history and management                                            |
 | Setup Wizard        | `apps/setupApp.js`              | First-run profile setup                                                     |
 | Intro Tour          | `apps/introTour.js`             | Replayable 60-second guided desktop tour                                    |
@@ -766,7 +766,7 @@ export class MyApp extends BaseApp {
 
 ### 2. Add CSS Styling
 
-Create `src/styles/myApp.css` with YukiOS styling:
+Create `src/styles/myApp.css` with OnyxOS styling:
 
 ```css
 .my-app-root {

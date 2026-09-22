@@ -1480,20 +1480,20 @@ function getGridItems() {
     }
   }
   return [
-    { app: "browserApp", title: "Yuki Browser", icon: "papirus:apps/internet-web-browser" },
+    { app: "browserApp", title: "Onyx Browser", icon: "papirus:apps/internet-web-browser" },
     { app: "explorerApp", title: "Files", icon: "papirus:places/folder-blue" },
     { app: "settingsApp", title: "Settings", icon: "papirus:actions/configure" },
-    { app: "aiAssistantApp", title: "Yuki AI Assistant", icon: "papirus:apps/gnome-robots" },
+    { app: "aiAssistantApp", title: "Onyx AI Assistant", icon: "papirus:apps/gnome-robots" },
     { app: "notepadApp", title: "Notepad", icon: "papirus:actions/edit" },
     { app: "calculatorApp", title: "Calculator", icon: "papirus:apps/accessories-calculator" },
     { app: "shortcutsApp", title: "Shortcuts", icon: "papirus:devices/input-keyboard" },
-    { app: "yukiConvertApp", title: "Yuki Convert", icon: "papirus:actions/swap-panels" },
+    { app: "yukiConvertApp", title: "Onyx Convert", icon: "papirus:actions/swap-panels" },
     { app: "cameraApp", title: "Camera", icon: "papirus:apps/accessories-camera" },
     { app: "officeApp", title: "Office", icon: "papirus:mimetypes/x-office-document" },
     { app: "clipboardManagerApp", title: "Clipboard Manager", icon: "papirus:actions/edit-paste" },
     { app: "weatherApp", title: "Weather", icon: "papirus:apps/weather" },
-    { app: "yukiOsGuideApp", title: "YukiOS Guide", icon: "papirus:apps/accessories-dictionary" },
-    { app: "steamApp", title: "Yuki Steam", icon: "papirus:apps/steam" },
+    { app: "yukiOsGuideApp", title: "OnyxOS Guide", icon: "papirus:apps/accessories-dictionary" },
+    { app: "steamApp", title: "Onyx Steam", icon: "papirus:apps/steam" },
     { app: "paint", title: "Paint", icon: "papirus:apps/gpaint" },
     { app: "newsApp", title: "What's New", icon: "papirus:apps/accessories-text-editor" },
     { app: "shittifyApp", title: "Evil Spotify", icon: "papirus:apps/juk" },
@@ -1501,7 +1501,7 @@ function getGridItems() {
     { app: "systemAppsApp", title: "System Apps", icon: "papirus:apps/utilities-tweak-tool" },
     { app: "taskManagerApp", title: "Task Manager", icon: "papirus:apps/application-default-icon-monitor" },
     { app: "terminal", title: "Terminal", icon: "papirus:apps/utilities-terminal" },
-    { app: "aboutApp", title: "About YukiOS", icon: "papirus:actions/help-about" },
+    { app: "aboutApp", title: "About OnyxOS", icon: "papirus:actions/help-about" },
     { app: "achievementsApp", title: "Achievements", icon: "papirus:actions/games-achievements" }
   ];
 }

@@ -183,7 +183,7 @@ export function renderAccountsSettings() {
         </div>
       </div>
       <div class="accounts-cloud" id="accounts-cloud">
-        <div class="accounts-cloud-head"><i class="fas fa-user-lock"></i> <span>YukiOS Account</span></div>
+        <div class="accounts-cloud-head"><i class="fas fa-user-lock"></i> <span>OnyxOS Account</span></div>
         <div class="accounts-cloud-host" id="accounts-cloud-host"></div>
         <p class="yukios-account-disclaimer">${escapeHtml(ACCOUNT_DISCLAIMER)}</p>
       </div>
@@ -599,7 +599,7 @@ async function renderSyncPanel(bodyEl) {
   if (!loggedIn) {
     setHTML(
       bodyEl,
-      `<p class="accounts-cloud-note"><i class="fas fa-lock"></i> Sign in to your YukiOS Account above to sync settings across devices. Cloud sync is off by default and everything works locally without it.</p>`
+      `<p class="accounts-cloud-note"><i class="fas fa-lock"></i> Sign in to your OnyxOS Account above to sync settings across devices. Cloud sync is off by default and everything works locally without it.</p>`
     );
     return;
   }

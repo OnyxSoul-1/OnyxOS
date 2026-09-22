@@ -1,0 +1,177 @@
+.room3d-editor-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.room3d-editor-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.room3d-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  cursor: default;
+}
+
+.room3d-canvas-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.room3d-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.room3d-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.room3d-crosshair--visible {
+  opacity: 1;
+}
+
+.room3d-hint,
+.room3d-wastebin-hint,
+.room3d-launch-hint,
+.room3d-editor-hint,
+.room3d-rotate-hint {
+  position: absolute;
+  left: 50%;
+  z-index: 8;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px) scale(0.96);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.room3d-hint {
+  bottom: 44px;
+  color: var(--text-primary);
+}
+
+.room3d-wastebin-hint {
+  bottom: 88px;
+  color: var(--text-primary);
+  border-color: var(--error-border);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px var(--error-bg),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.room3d-launch-hint {
+  bottom: 88px;
+  color: var(--text-primary);
+  border-color: var(--brand-dim);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 18px var(--brand-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.room3d-rotate-hint {
+  bottom: 132px;
+  color: var(--text-primary);
+}
+
+.room3d-editor-hint {
+  bottom: 24px;
+  color: var(--text-primary);
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: min(92%, 760px);
+  padding: 12px 20px;
+  gap: 10px 14px;
+}
+
+.room3d-hint--visible,
+.room3d-wastebin-hint--visible,
+.room3d-launch-hint--visible,
+.room3d-editor-hint--visible,
+.room3d-rotate-hint--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.room3d-hint-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 9px;
+  border-radius: var(--r-sm);
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border);
+  border-bottom-width: 2.5px;
+  font-size: 13px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.room3d-wastebin-hint .room3d-hint-key {
+  border-color: var(--error-border);
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.room3d-launch-hint .room3d-hint-key {
+  border-color: var(--brand);
+  background: var(--brand-dim);
+  color: var(--brand);
+}
+
+.room3d-editor-hint .room3d-hint-key {
+  min-width: 28px;
+  height: 28px;
+  font-size: 12px;
+  background: var(--glass);
+}

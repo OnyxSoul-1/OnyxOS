@@ -3,7 +3,7 @@ import { $, $$, bindEvent, setText } from "../shared/domUtils.js";
 import { escapeHtml } from "../utils/utils.js";
 import { callIfFunction } from "../shared/functionUtils.js";
 
-export const ACCOUNT_DISCLAIMER = "This is a YukiOS login. YukiOS is not affiliated with Steam or Valve.";
+export const ACCOUNT_DISCLAIMER = "This is a OnyxOS login. OnyxOS is not affiliated with Steam or Valve.";
 
 export function buildAccountStatusHtml() {
   const account = getAccountStatus();

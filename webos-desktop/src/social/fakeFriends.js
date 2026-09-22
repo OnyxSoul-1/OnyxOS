@@ -162,7 +162,7 @@ let fakeMessageStore = {
   ],
   "clippy": [
     {
-      body: "It looks like you're trying to open YukiOS.",
+      body: "It looks like you're trying to open OnyxOS.",
       fromId: "clippy",
       sentAt: NOW - 2 * HOUR
     },

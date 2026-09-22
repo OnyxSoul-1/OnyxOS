@@ -1,4 +1,4 @@
-# Contributing to YukiOS
+# Contributing to OnyxOS
 
 Check out our [Roadmap](ROADMAP.md)
 

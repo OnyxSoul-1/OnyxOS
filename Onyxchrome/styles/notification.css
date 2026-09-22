@@ -1,0 +1,670 @@
+.ntf-toast-container {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  max-height: calc(100vh - 120px);
+}
+
+.ntf-toast-container--bottom-right {
+  bottom: 70px;
+  right: 20px;
+  left: auto;
+  top: auto;
+}
+
+.ntf-toast-container--bottom-left {
+  bottom: 70px;
+  left: 20px;
+  right: auto;
+  top: auto;
+}
+
+.ntf-toast-container--top-right {
+  top: 70px;
+  right: 20px;
+  left: auto;
+  bottom: auto;
+}
+
+.ntf-toast-container--top-left {
+  top: 70px;
+  left: 20px;
+  right: auto;
+  bottom: auto;
+}
+
+.ntf-toast {
+  pointer-events: auto;
+  width: 340px;
+  background: var(--surface-1);
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  animation: toastIn 0.25s ease-out forwards;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.ntf-toast.ntf-toast-out {
+  opacity: 0;
+  transform: translateX(120%);
+  animation: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ntf-toast__glyph-wrap {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass);
+  border-radius: var(--r-md);
+  margin-top: 2px;
+}
+
+.ntf-toast__glyph {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ntf-toast--info .ntf-toast__glyph {
+  color: var(--brand);
+}
+
+.ntf-toast--ok .ntf-toast__glyph {
+  color: var(--status-online);
+}
+
+.ntf-toast--warn .ntf-toast__glyph {
+  color: var(--warn);
+}
+
+.ntf-toast--fail .ntf-toast__glyph {
+  color: var(--error);
+}
+
+.ntf-toast__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ntf-toast__source {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.ntf-toast__heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ntf-toast__text {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: var(--lh-body);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ntf-toast__close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-xs);
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+@media (hover: hover) {
+  .ntf-toast__close {
+    opacity: 0;
+  }
+
+  .ntf-toast:hover .ntf-toast__close,
+  .ntf-toast__close:focus-visible {
+    opacity: 1;
+  }
+}
+
+.ntf-toast__close:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+}
+
+#ntf-panel {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 360px;
+  max-height: calc(100vh - 120px);
+  background: var(--surface-1);
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-depth);
+  display: flex;
+  flex-direction: column;
+  z-index: 100001;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
+}
+
+#ntf-panel.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.ntf-panel__head {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.ntf-panel__dnd {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.ntf-panel__dnd:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+}
+
+.ntf-panel__dnd.active {
+  background: var(--error-bg);
+  border-color: var(--error-border);
+  color: var(--error);
+}
+
+.ntf-panel__dismiss {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-xs);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.ntf-panel__dismiss:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+}
+
+.ntf-panel__feed {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--glass-border) transparent;
+}
+
+.ntf-panel__feed::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ntf-panel__feed::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ntf-panel__feed::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 999px;
+}
+
+.ntf-panel__blank {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.ntf-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ntf-card:hover {
+  background: var(--glass-hover);
+  border-color: var(--glass-border);
+}
+
+.ntf-card__glyph-wrap {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass);
+  border-radius: var(--r-sm);
+  margin-top: 2px;
+}
+
+.ntf-card__glyph {
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ntf-card--info .ntf-card__glyph {
+  color: var(--brand);
+}
+
+.ntf-card--ok .ntf-card__glyph {
+  color: var(--status-online);
+}
+
+.ntf-card--warn .ntf-card__glyph {
+  color: var(--warn);
+}
+
+.ntf-card--fail .ntf-card__glyph {
+  color: var(--error);
+}
+
+.ntf-card__body {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ntf-card__source {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.ntf-card__heading {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.ntf-card__text {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.ntf-card__stamp {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.ntf-card__remove {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-xs);
+  justify-self: end;
+  align-self: start;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.ntf-card__remove:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+}
+
+.ntf-panel__foot {
+  padding: 12px 16px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.ntf-purge-btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.ntf-purge-btn:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+}
+
+.ntf-purge-btn:active {
+  transform: scale(0.98);
+}
+
+.tray-icon-btn[data-win-id="notification"].active {
+  background: rgba(0, 120, 215, 0.25);
+}
+
+.ntf-panel--closed {
+  display: none !important;
+}
+
+.ntf-toast__glyph-img {
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+
+.ntf-toast.ntf-toast--no-animation {
+  animation: none !important;
+  transition: none !important;
+}
+
+.ntf-toast--dragging {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  animation: none !important;
+  transition: none !important;
+}
+
+.ntf-toast__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--brand);
+  transform-origin: right;
+  animation: toastProgress linear forwards;
+}
+
+@keyframes toastProgress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.ntf-toast--info .ntf-toast__progress {
+  background: var(--brand);
+}
+
+.ntf-toast--ok .ntf-toast__progress {
+  background: var(--status-online);
+}
+
+.ntf-toast--warn .ntf-toast__progress {
+  background: var(--warn);
+}
+
+.ntf-toast--fail .ntf-toast__progress {
+  background: var(--error);
+}
+
+@keyframes toastInMac {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mac-mode .ntf-toast-container {
+  top: 70px;
+  bottom: auto;
+}
+
+.mac-mode .ntf-toast-container--bottom-right {
+  top: 70px;
+  bottom: auto;
+  right: 20px;
+  left: auto;
+}
+
+.mac-mode .ntf-toast-container--bottom-left {
+  top: 70px;
+  bottom: auto;
+  left: 20px;
+  right: auto;
+}
+
+.mac-mode .ntf-toast-container--top-right {
+  top: 70px;
+  bottom: auto;
+  right: 20px;
+  left: auto;
+}
+
+.mac-mode .ntf-toast-container--top-left {
+  top: 70px;
+  bottom: auto;
+  left: 20px;
+  right: auto;
+}
+
+.mac-mode .ntf-toast,
+html[data-theme].mac-mode .ntf-toast {
+  animation-name: toastInMac;
+  background: #000000a3 !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid black !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mac-mode .ntf-toast__glyph-wrap,
+html[data-theme].mac-mode .ntf-toast__glyph-wrap {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.mac-mode .ntf-toast__close:hover,
+html[data-theme].mac-mode .ntf-toast__close:hover {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.mac-mode #ntf-panel,
+html[data-theme].mac-mode #ntf-panel {
+  top: calc(var(--taskbar-h) + 12px);
+  bottom: auto;
+  max-height: calc(100vh - var(--taskbar-h) - 60px);
+  background: #000000a3 !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid black !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mac-mode .ntf-panel__head,
+html[data-theme].mac-mode .ntf-panel__head {
+  border-bottom-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.mac-mode .ntf-panel__dnd,
+html[data-theme].mac-mode .ntf-panel__dnd {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.mac-mode .ntf-panel__dnd:hover,
+html[data-theme].mac-mode .ntf-panel__dnd:hover {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.mac-mode .ntf-panel__dismiss:hover,
+html[data-theme].mac-mode .ntf-panel__dismiss:hover {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.mac-mode .ntf-card,
+html[data-theme].mac-mode .ntf-card {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.mac-mode .ntf-card:hover,
+html[data-theme].mac-mode .ntf-card:hover {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.mac-mode .ntf-card__glyph-wrap,
+html[data-theme].mac-mode .ntf-card__glyph-wrap {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.mac-mode .ntf-card__remove:hover,
+html[data-theme].mac-mode .ntf-card__remove:hover {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.mac-mode .ntf-panel__foot,
+html[data-theme].mac-mode .ntf-panel__foot {
+  border-top-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.mac-mode .ntf-purge-btn,
+html[data-theme].mac-mode .ntf-purge-btn {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.mac-mode .ntf-purge-btn:hover,
+html[data-theme].mac-mode .ntf-purge-btn:hover {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+html.chromeos-mode .ntf-toast {
+  background: #000000a3 !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid black !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.chromeos-mode #ntf-panel {
+  background: #000000a3 !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid black !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5) !important;
+}

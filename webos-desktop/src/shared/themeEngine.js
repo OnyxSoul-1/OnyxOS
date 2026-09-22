@@ -45,7 +45,7 @@ const BUILTIN_THEMES = [
   {
     value: "yukios",
     icon: "fas fa-dragon",
-    label: "YukiOS",
+    label: "OnyxOS",
     category: "special",
     preview: "linear-gradient(135deg, #3a3a5c, #16161d)",
     colors: {

@@ -56,7 +56,7 @@ const STEPS = [
   {
     id: "welcome",
     icon: "fas fa-rocket",
-    title: "This is YukiOS.",
+    title: "This is OnyxOS.",
     body: "A full desktop inside one browser tab. No installs, nothing for a school or work network to block, and everything saved right here in this browser. 60 seconds and you'll have seen what it does.",
     buttons: { primary: { label: "Start", action: "advance" } }
   },
@@ -106,7 +106,7 @@ const STEPS = [
     title: "One desktop, four faces.",
     body: "Flip the whole desktop to a Mac, a Chromebook, or a tiling window manager. Try one, then jump back to default mode.",
     modeButtons: [
-      { label: "YukiOS", icon: "fas fa-snowflake", mode: "reset" },
+      { label: "OnyxOS", icon: "fas fa-snowflake", mode: "reset" },
       { label: "Mac", icon: "fab fa-apple", mode: "mac" },
       { label: "Chrome OS", icon: "fab fa-chrome", mode: "chromeos" },
       { label: "Tiling", icon: "fas fa-th-large", mode: "tiling" }
@@ -134,7 +134,7 @@ const STEPS = [
     icon: "fas fa-circle-check",
     title: "It's all saved.",
     body: "Files, settings, and layouts all persist in this browser. Come back tomorrow and it's exactly where you left it.",
-    target: () => $('.taskbar-item.pinned[data-title="Yuki Browser"]'),
+    target: () => $('.taskbar-item.pinned[data-title="Onyx Browser"]'),
     cardSide: "top",
     buttons: {
       secondary: { label: "Done", action: "finish" },

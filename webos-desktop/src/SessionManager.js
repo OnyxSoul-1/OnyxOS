@@ -30,7 +30,7 @@ export class SessionManager {
     this.userHistory = this.loadUserHistory();
     this.sessionState = "login";
     this.selectedUser = null;
-    this.selectedSession = os.storage.get(StorageKeys.selectedSession) || "Yuki Desktop(Default)";
+    this.selectedSession = os.storage.get(StorageKeys.selectedSession) || "Onyx Desktop(Default)";
     this.ensureUserId();
     this.setupProfileUpdateListener();
     this.startTime = Date.now();
@@ -163,7 +163,7 @@ export class SessionManager {
     const directBoot = steamParam || deckParam;
 
     if (directBoot) {
-      if (deckParam) this.selectedSession = "Yuki Deck Mode";
+      if (deckParam) this.selectedSession = "Onyx Deck Mode";
       this.currentSession = {
         name: os.storage.get(StorageKeys.username) || "Guest",
         key: os.storage.get(StorageKeys.userId) || this.ensureUserId(),
@@ -175,7 +175,7 @@ export class SessionManager {
 
     const autoLogin = os.storage.get(StorageKeys.autoLogin);
 
-    if (this.selectedSession === "Yuki Deck Mode") {
+    if (this.selectedSession === "Onyx Deck Mode") {
       if (autoLogin && os.storage.get(StorageKeys.username)) {
         this.currentSession = {
           name: os.storage.get(StorageKeys.username) || "Guest",
@@ -239,15 +239,15 @@ export class SessionManager {
       <div class="session-wallpaper"></div>
       <div class="session-background"></div>
       <div class="session-content${state === "locked" ? "" : " extra-hidden"}">
-        <div class="session-brand">YukiOS</div>
+        <div class="session-brand">OnyxOS</div>
         <div class="session-time">${timeStr}</div>
         <div class="session-date">${dateStr}</div>
 
         <div class="session-extra">
-        <div class="session-support-btn" id="session-support-btn" title="Support YukiOS">
+        <div class="session-support-btn" id="session-support-btn" title="Support OnyxOS">
           <img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/emotes/face-smile.svg" class="papirus-icon papirus-icon--22" alt="" />
         </div>
-        <a class="session-github-btn" href="https://github.com/Reeyuki/YukiOS" target="_blank" rel="noopener" title="Star Us On Github">
+        <a class="session-github-btn" href="https://github.com/Reeyuki/OnyxOS" target="_blank" rel="noopener" title="Star Us On Github">
           <img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/apps/github.svg" class="papirus-icon papirus-icon--22" alt="" />
         </a>
         <a class="session-discord-btn" href="https://discord.gg/wufbWFwr4G" target="_blank" rel="noopener" title="Join Discord">
@@ -262,7 +262,7 @@ export class SessionManager {
           <div class="session-status-panel" id="session-status-panel">
             <div class="status-info-row">
               <span class="status-info-label">Version</span>
-              <span class="status-info-value">YukiOS ${YUKIOS_VERSION}</span>
+              <span class="status-info-value">OnyxOS ${YUKIOS_VERSION}</span>
             </div>
             <div class="status-info-row">
               <span class="status-info-label">Build</span>
@@ -332,7 +332,7 @@ export class SessionManager {
             <div class="session-modes-grid">
               <button type="button" class="session-mode-btn" data-mode="reset">
                 <img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/48x48/status/weather-snow.svg" class="papirus-icon papirus-icon--22" alt="" />
-                <span>YukiOS</span>
+                <span>OnyxOS</span>
               </button>
               <button type="button" class="session-mode-btn" data-mode="mac">
                 <img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/apps/apple-music.svg" class="papirus-icon papirus-icon--22" alt="" />
@@ -363,7 +363,7 @@ export class SessionManager {
             <img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/window-close.svg" class="papirus-icon papirus-icon--22" alt="" />
           </button>
           <img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/edit-download.svg" class="papirus-icon papirus-icon--22" alt="" />
-          <span><strong>YukiOS desktop app</strong> Persistent storage, system tray, remote desktop, and faster performance.</span>
+          <span><strong>OnyxOS desktop app</strong> Persistent storage, system tray, remote desktop, and faster performance.</span>
           <div class="electron-banner-actions">
             <span class="electron-download-link" id="electron-download-btn"><img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/actions/edit-download.svg" class="papirus-icon papirus-icon--22" alt="" /> Download</span>
             <a href="https://github.com/reeyuki/yukios/releases" target="_blank" class="electron-releases-link">View all releases</a>
@@ -435,7 +435,7 @@ export class SessionManager {
               <div class="settings-card-header"><img src="https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus-icon-theme@master/Papirus/22x22/apps/utilities-tweak-tool.svg" class="papirus-icon papirus-icon--22" alt="" /> Session Modes</div>
               <div class="settings-row">
                 <div class="settings-label-group">
-                  <span class="settings-label-title">YukiOS</span>
+                  <span class="settings-label-title">OnyxOS</span>
                   <span class="settings-label-desc">Default desktop session</span>
                 </div>
                 <label class="settings-toggle">
@@ -485,7 +485,7 @@ export class SessionManager {
               </div>
               <div class="settings-row">
                 <div class="settings-label-group">
-                  <span class="settings-label-title">Yuki Deck</span>
+                  <span class="settings-label-title">Onyx Deck</span>
                   <span class="settings-label-desc">Fullscreen handheld gaming shell</span>
                 </div>
                 <label class="settings-toggle">
@@ -1094,13 +1094,13 @@ export class SessionManager {
     }
 
     powerBtn.addEventListener("click", async () => {
-      if (await os.dialog.confirm("Shutdown", `Shut down YukiOS?`)) {
+      if (await os.dialog.confirm("Shutdown", `Shut down OnyxOS?`)) {
         window.close();
       }
     });
 
     restartBtn.addEventListener("click", async () => {
-      if (await os.dialog.confirm("Restart", `Restart YukiOS?`)) {
+      if (await os.dialog.confirm("Restart", `Restart OnyxOS?`)) {
         location.reload();
       }
     });
@@ -1111,20 +1111,20 @@ export class SessionManager {
 
     const sessionModes = this.container.querySelectorAll("#session-modes .session-mode-btn");
     const modeToSession = {
-      reset: "Yuki Desktop(Default)",
-      mac: "Yuki Mac Desktop",
-      chromeos: "Yuki Chrome OS",
-      tiling: "Yuki Tiling VM",
-      "3d": "Yuki 3D Desktop",
-      steamdeck: "Yuki Deck Mode"
+      reset: "Onyx Desktop(Default)",
+      mac: "Onyx Mac Desktop",
+      chromeos: "Onyx Chrome OS",
+      tiling: "Onyx Tiling VM",
+      "3d": "Onyx 3D Desktop",
+      steamdeck: "Onyx Deck Mode"
     };
     const sessionToMode = {
-      "Yuki Desktop(Default)": "reset",
-      "Yuki Mac Desktop": "mac",
-      "Yuki Chrome OS": "chromeos",
-      "Yuki Tiling VM": "tiling",
-      "Yuki 3D Desktop": "3d",
-      "Yuki Deck Mode": "steamdeck",
+      "Onyx Desktop(Default)": "reset",
+      "Onyx Mac Desktop": "mac",
+      "Onyx Chrome OS": "chromeos",
+      "Onyx Tiling VM": "tiling",
+      "Onyx 3D Desktop": "3d",
+      "Onyx Deck Mode": "steamdeck",
       tiling: "tiling"
     };
     const activeMode = sessionToMode[this.selectedSession] || "reset";
@@ -1334,38 +1334,38 @@ export class SessionManager {
     }
     this.addToUserHistory(this.currentSession);
 
-    if (this.selectedSession !== "Yuki 3D Desktop") {
+    if (this.selectedSession !== "Onyx 3D Desktop") {
       await os.fs.setSession(name);
     }
 
     os.events.emit(BusEvents.SESSION_INITIALIZED, this.currentSession);
     liveActivityManager.init();
 
-    if (this.selectedSession === "Yuki Mac Desktop") {
+    if (this.selectedSession === "Onyx Mac Desktop") {
       applyMacSettings();
     } else {
       disableMacSettings();
     }
 
-    if (this.selectedSession === "Yuki Tiling VM" || this.selectedSession === "tiling") {
+    if (this.selectedSession === "Onyx Tiling VM" || this.selectedSession === "tiling") {
       applyTilingSettings();
     } else {
       disableTilingSettings();
     }
 
-    if (this.selectedSession === "Yuki Chrome OS") {
+    if (this.selectedSession === "Onyx Chrome OS") {
       applyChromeOsSettings();
     } else {
       disableChromeOsSettings();
     }
 
-    if (this.selectedSession === "Yuki Deck Mode") {
+    if (this.selectedSession === "Onyx Deck Mode") {
       applySteamDeckSettings();
     } else {
       disableSteamDeckSettings();
     }
 
-    if (this.selectedSession === "Yuki 3D Desktop") {
+    if (this.selectedSession === "Onyx 3D Desktop") {
       await this.apply3DSettings();
     } else {
       this.disable3DSettings();
@@ -1374,7 +1374,7 @@ export class SessionManager {
     os.window.setFileSystemManager(os.fileSystemManager);
     setTimeout(() => os.window.restoreSession(), 500);
 
-    if (!os.storage.get(StorageKeys.setupCompleted) && this.selectedSession === "Yuki Desktop(Default)") {
+    if (!os.storage.get(StorageKeys.setupCompleted) && this.selectedSession === "Onyx Desktop(Default)") {
       const setupApp = this.os.app.getInstance(ServiceKeys.SETUP);
       if (setupApp) setTimeout(() => setupApp.open(), 1000);
     }

@@ -72,7 +72,7 @@ const STEAM_STEPS = [
     id: "steam-shop",
     icon: "fas fa-bag-shopping",
     title: "The profile store.",
-    body: "Spend coins on profile borders, titles, and reaction flair that travels with you across YukiOS.",
+    body: "Spend coins on profile borders, titles, and reaction flair that travels with you across OnyxOS.",
     target: () => $(SHOP_PAGE_SELECTOR, document) || null,
     onEnter: () => navigateContainer("shop"),
     cardSide: "top",
@@ -134,8 +134,8 @@ export async function offerSteamTour() {
   if (os.storage.get(StorageKeys.steamIntroSeen)) return;
   if (isAnyTourActive()) return;
   const accept = await os.dialog.confirm(
-    "Tour Yuki Steam",
-    "Yuki Steam packs a store, library, daily quests, a profile store, and a live community. Want a quick tour?"
+    "Tour Onyx Steam",
+    "Onyx Steam packs a store, library, daily quests, a profile store, and a live community. Want a quick tour?"
   );
   if (isAnyTourActive()) return;
   if (accept) {

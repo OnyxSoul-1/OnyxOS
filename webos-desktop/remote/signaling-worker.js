@@ -34,7 +34,7 @@ export class Room extends DurableObject {
     const roomParam = (url.searchParams.get("room") || "").slice(0, 6).toUpperCase();
 
     if (request.headers.get("Upgrade") !== "websocket") {
-      return new Response("YukiOS Remote Desktop Signaling", { status: 200 });
+      return new Response("OnyxOS Remote Desktop Signaling", { status: 200 });
     }
 
     const pair = new WebSocketPair();

@@ -1,6 +1,6 @@
-# YukiOS Roadmap
+# OnyxOS Roadmap
 
-Planned features and improvements for YukiOS.
+Planned features and improvements for OnyxOS.
 
 ## Legend
 

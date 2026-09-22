@@ -1,0 +1,207 @@
+# OnyxOS Changed Files Summary
+
+This file lists the files currently changed or created in the local workspace for the Onyx rebrand and feature updates.
+
+## Root project files
+- .github/workflows/push_discord.yml
+- AGENTS.md
+- CONTRIBUTING.md
+- DEVELOPMENT.md
+- README.md
+- ROADMAP.md
+
+## Main desktop project files
+- webos-desktop/cloudflare_worker.js
+- webos-desktop/electron/main.cjs
+- webos-desktop/index.html
+- webos-desktop/package.json
+- webos-desktop/proxy_cf_worker.js
+- webos-desktop/public/s/index.html
+- webos-desktop/public/steam-only.html
+- webos-desktop/remote/index.html
+- webos-desktop/remote/signaling-worker.js
+- webos-desktop/scripts/generateSitemap.js
+
+## Core app and system files
+- webos-desktop/src/3d/RoomRenderer.js
+- webos-desktop/src/AppSource.js
+- webos-desktop/src/SessionManager.js
+- webos-desktop/src/achievements.js
+- webos-desktop/src/appLauncher.js
+- webos-desktop/src/bootScreen.js
+- webos-desktop/src/donationPopup.js
+- webos-desktop/src/fs.js
+- webos-desktop/src/gameOverlay.js
+- webos-desktop/src/games/GameRenderer.js
+- webos-desktop/src/games/GameUI.js
+- webos-desktop/src/games/gameDescriptions.js
+- webos-desktop/src/games/games.js
+- webos-desktop/src/games/steam.js
+- webos-desktop/src/games/steamNewsData.js
+- webos-desktop/src/games/steamSettings.js
+- webos-desktop/src/games/steamSettingsCatalog.js
+- webos-desktop/src/games/steamSocial.js
+- webos-desktop/src/keybindManager.js
+- webos-desktop/src/modeManager.js
+- webos-desktop/src/modes/macos/MacDock.js
+- webos-desktop/src/modes/macos/appMenus.js
+- webos-desktop/src/modes/steamdeck/SteamDeckLayout.js
+- webos-desktop/src/modes/steamdeck/SteamDeckManager.js
+- webos-desktop/src/modes/steamdeck/deckBootVideo.js
+- webos-desktop/src/modes/steamdeck/deckMediaCarousel.js
+- webos-desktop/src/modes/steamdeck/quickAccess.js
+- webos-desktop/src/news.json
+- webos-desktop/src/os/modes.js
+- webos-desktop/src/registry/AppManifest.js
+- webos-desktop/src/settings/accountsPanel.js
+- webos-desktop/src/settings/pane-gaming.js
+- webos-desktop/src/settings/settingRenderer.js
+- webos-desktop/src/settings/settingsNav.js
+- webos-desktop/src/shared/fileProtocolFallback.js
+- webos-desktop/src/shared/shortcutsPanel.js
+- webos-desktop/src/shared/themeEngine.js
+- webos-desktop/src/social/accountUI.js
+- webos-desktop/src/social/fakeFriends.js
+- webos-desktop/src/social/userIdentity.js
+- webos-desktop/src/terminal/httpServer.js
+- webos-desktop/src/versionChecker.js
+- webos-desktop/src/windowManager.js
+- webos-desktop/src/windowManager/TaskbarSystem.js
+- webos-desktop/src/windowManager/WindowStateManager.js
+
+## Desktop UI files
+- webos-desktop/src/desktopui/iconManager.js
+- webos-desktop/src/desktopui/startMenu.js
+
+## App files changed
+- webos-desktop/src/apps/RemoteHostApp.js
+- webos-desktop/src/apps/about.js
+- webos-desktop/src/apps/aiAssistant.js
+- webos-desktop/src/apps/emulator.js
+- webos-desktop/src/apps/introTour.js
+- webos-desktop/src/apps/modeSwitcher.js
+- webos-desktop/src/apps/monaco.js
+- webos-desktop/src/apps/news.js
+- webos-desktop/src/apps/notepad.js
+- webos-desktop/src/apps/office.js
+- webos-desktop/src/apps/run.js
+- webos-desktop/src/apps/setupApp.js
+- webos-desktop/src/apps/steamIntro.js
+- webos-desktop/src/apps/terminal.js
+- webos-desktop/src/apps/torrentClient.js
+- webos-desktop/src/apps/yukiConvert.js
+- webos-desktop/src/apps/yukiOsGuide.js
+
+## New Onyx folders created
+
+### ONYXsteam
+- ONYXsteam/README.md
+- ONYXsteam/deck/SteamDeckAudio.js
+- ONYXsteam/deck/SteamDeckLayout.js
+- ONYXsteam/deck/SteamDeckManager.js
+- ONYXsteam/deck/deckBootVideo.js
+- ONYXsteam/deck/deckCapture.js
+- ONYXsteam/deck/deckDialog.js
+- ONYXsteam/deck/deckMediaCarousel.js
+- ONYXsteam/deck/deckPerfHud.js
+- ONYXsteam/deck/focusGrid.js
+- ONYXsteam/deck/launchSplash.js
+- ONYXsteam/deck/quickAccess.js
+- ONYXsteam/deck/session.js
+- ONYXsteam/deck/style.css
+- ONYXsteam/steam/steam.js
+- ONYXsteam/steam/steamAudio.js
+- ONYXsteam/steam/steamNewsData.js
+- ONYXsteam/steam/steamOverviewData.js
+- ONYXsteam/steam/steamPopupWindow.js
+- ONYXsteam/steam/steamSettings.js
+- ONYXsteam/steam/steamSettingsCatalog.js
+- ONYXsteam/steam/steamSocial.js
+- ONYXsteam/styles/steam.css
+- ONYXsteam/styles/steamCosmetics.css
+- ONYXsteam/styles/steamSocial.css
+
+### Onyxchrome
+- Onyxchrome/README.md
+- Onyxchrome/chromeos/Launcher.js
+- Onyxchrome/chromeos/Shelf.js
+- Onyxchrome/chromeos/quickSettings.js
+- Onyxchrome/chromeos/session.js
+- Onyxchrome/chromeos/settings.js
+- Onyxchrome/styles/RemoteHostApp.css
+- Onyxchrome/styles/about.css
+- Onyxchrome/styles/achievements.css
+- Onyxchrome/styles/ads.css
+- Onyxchrome/styles/appCreator.css
+- Onyxchrome/styles/aquarium.css
+- Onyxchrome/styles/batterySaver.css
+- Onyxchrome/styles/bootScreen.css
+- Onyxchrome/styles/browser.css
+- Onyxchrome/styles/calculator.css
+- Onyxchrome/styles/calendar.css
+- Onyxchrome/styles/camera.css
+- Onyxchrome/styles/chooseAppDialog.css
+- Onyxchrome/styles/chromeos.css
+- Onyxchrome/styles/clock.css
+- Onyxchrome/styles/colorPicker.css
+- Onyxchrome/styles/commandPalette.css
+- Onyxchrome/styles/converter.css
+- Onyxchrome/styles/cursorEffect.css
+- Onyxchrome/styles/customColorsDialog.css
+- Onyxchrome/styles/dataeditor.css
+- Onyxchrome/styles/defaultApps.css
+- Onyxchrome/styles/desktop.css
+- Onyxchrome/styles/donationPopup.css
+- Onyxchrome/styles/emojiSelector.css
+- Onyxchrome/styles/emulator.css
+- Onyxchrome/styles/explorer.css
+- Onyxchrome/styles/gameOverlay.css
+- Onyxchrome/styles/gamesAndApps.css
+- Onyxchrome/styles/introTour.css
+- Onyxchrome/styles/launchpad.css
+- Onyxchrome/styles/liveStats.css
+- Onyxchrome/styles/magnifier.css
+- Onyxchrome/styles/maps.css
+- Onyxchrome/styles/markdown.css
+- Onyxchrome/styles/mediaPlayer.css
+- Onyxchrome/styles/mobile.css
+- Onyxchrome/styles/monaco.css
+- Onyxchrome/styles/news.css
+- Onyxchrome/styles/notepad.css
+- Onyxchrome/styles/notification.css
+- Onyxchrome/styles/office.css
+- Onyxchrome/styles/papirusIcons.css
+- Onyxchrome/styles/rhythms.css
+- Onyxchrome/styles/roblox.css
+- Onyxchrome/styles/room3d.css
+- Onyxchrome/styles/run.css
+- Onyxchrome/styles/scramjet.css
+- Onyxchrome/styles/screenshot.css
+- Onyxchrome/styles/session.css
+- Onyxchrome/styles/settings.css
+- Onyxchrome/styles/setup.css
+- Onyxchrome/styles/shortcuts.css
+- Onyxchrome/styles/startButtonPicker.css
+- Onyxchrome/styles/startMenu.css
+- Onyxchrome/styles/steam.css
+- Onyxchrome/styles/steamCosmetics.css
+- Onyxchrome/styles/steamSocial.css
+- Onyxchrome/styles/style.css
+- Onyxchrome/styles/systemApps.css
+- Onyxchrome/styles/systemUI.css
+- Onyxchrome/styles/taskManager.css
+- Onyxchrome/styles/taskbar.css
+- Onyxchrome/styles/terminal.css
+- Onyxchrome/styles/themes.css
+- Onyxchrome/styles/tilingBar.css
+- Onyxchrome/styles/torBrowser.css
+- Onyxchrome/styles/torrent.css
+- Onyxchrome/styles/virtualMachineManager.css
+- Onyxchrome/styles/wallpaperEngine.css
+- Onyxchrome/styles/weather.css
+- Onyxchrome/styles/widgets.css
+- Onyxchrome/styles/windowHeaderStyles.css
+- Onyxchrome/styles/yukiOsGuide.css
+
+## Summary
+These are the files in the current local Onyx work state, including the rebrand, Steam/Deck changes, ChromeOS copy, and the standalone Steam preview page.

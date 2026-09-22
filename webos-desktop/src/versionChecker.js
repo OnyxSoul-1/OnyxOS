@@ -1,7 +1,7 @@
 import { YUKIOS_VERSION } from "./apps/about.js";
 import { StorageKeys, os, MODES } from "./framework.js";
 
-const VERSION_URL = "https://raw.githubusercontent.com/reeyuki/YukiOS/main/webos-desktop/version.txt";
+const VERSION_URL = "https://raw.githubusercontent.com/reeyuki/OnyxOS/main/webos-desktop/version.txt";
 const CHECK_INTERVAL = 6 * 60 * 60 * 1000;
 const TRAY_ID = "versionChecker";
 
@@ -41,7 +41,7 @@ class VersionChecker {
         os.storage.set(StorageKeys.lastKnownRemoteVersion, remoteVersion);
 
         if (lastKnownRemote !== remoteVersion) {
-          os.notify.send("Update Available", `YukiOS ${remoteVersion} is now available!`, {
+          os.notify.send("Update Available", `OnyxOS ${remoteVersion} is now available!`, {
             type: "info",
             duration: 0,
             icon: "fa-download",

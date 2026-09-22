@@ -1,0 +1,1681 @@
+:root {
+  --taskbar-h: 3.2em;
+  --taskbar-v-w: 64px;
+  --taskbar-padding-top: 0;
+  --taskbar-padding-bottom: var(--taskbar-h);
+  --taskbar-padding-left: 0;
+  --taskbar-padding-right: 0;
+
+  --font-size-scale: 1;
+  --gui-scale: 1;
+  --spacing-scale: 1;
+  --taskbar-scale: 1;
+
+  --spacing-xxs: calc(2px * var(--spacing-scale));
+  --spacing-xs: calc(4px * var(--spacing-scale));
+  --spacing-sm: calc(8px * var(--spacing-scale));
+  --spacing-md: calc(12px * var(--spacing-scale));
+  --spacing-lg: calc(16px * var(--spacing-scale));
+  --spacing-xl: calc(20px * var(--spacing-scale));
+  --spacing-2xl: calc(24px * var(--spacing-scale));
+
+  --font-ui: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: Georgia, serif;
+
+  --brand: oklch(55% 0.12 260);
+  --brand-hover: oklch(48% 0.12 260);
+  --brand-dark: oklch(38% 0.12 260);
+  --brand-glow: oklch(55% 0.08 260 / 0.18);
+  --brand-dim: oklch(55% 0.12 260 / 0.12);
+
+  --r-xxs: 2px;
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r: 10px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-2xl: 20px;
+  --r-full: 999px;
+
+  --bg-base: oklch(12% 0.005 250);
+  --bg-elev-1: oklch(16% 0.005 250);
+  --bg-elev-2: oklch(20% 0.005 250);
+  --bg-elev-3: oklch(26% 0.005 250);
+
+  --surface-solid: oklch(16% 0.005 250);
+  --surface-hover: oklch(24% 0.005 250);
+
+  --glass: oklch(100% 0 0 / 0.04);
+  --glass-strong: oklch(100% 0 0 / 0.07);
+  --glass-border: oklch(100% 0 0 / 0.09);
+
+  --taskbar-open-bg: #222425;
+
+  --text-primary: oklch(93% 0.005 250);
+  --text-secondary: oklch(68% 0.005 250);
+  --text-muted: oklch(55% 0.005 250);
+
+  --tx-on-brand: oklch(100% 0 0);
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  --overlay-bg: oklch(0% 0 0 / 0.6);
+
+  --menu-bg: var(--bg-elev-2);
+  --window-bg: var(--bg-elev-1);
+
+  --icon-w: 80px;
+  --icon-h: 80px;
+  --icon-img-s: 48px;
+  --icon-gap: calc(10px * var(--spacing-scale));
+
+  --shadow-sm: 0 2px 8px oklch(0% 0 0 / 0.35);
+  --shadow-md: 0 8px 24px oklch(0% 0 0 / 0.45);
+  --shadow-lg: 0 16px 48px oklch(0% 0 0 / 0.55);
+  --shadow-depth: 0 24px 64px oklch(0% 0 0 / 0.65);
+
+  --error: oklch(60% 0.2 25);
+  --error-bg: oklch(60% 0.2 25 / 0.12);
+  --error-border: oklch(60% 0.2 25 / 0.25);
+  --warn: oklch(78% 0.13 85);
+
+  --charging: oklch(65% 0.2 140);
+
+  --status-online: oklch(65% 0.2 140);
+  --status-online-bg: oklch(65% 0.2 140 / 0.14);
+
+  --shadow-color: rgba(0, 0, 0, 0.65);
+  --surface-1: rgba(18, 18, 24, 0.85);
+  --surface-2: rgba(22, 22, 30, 0.8);
+  --surface-3: rgba(26, 26, 36, 0.75);
+  --glass-hover: rgba(255, 255, 255, 0.12);
+  --text-on-brand: #ffffff;
+
+  --text-xxs: 10px;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.6;
+
+  --ls-normal: 0;
+  --ls-wide: 0.08em;
+
+  --blur-xs: 10px;
+  --blur-sm: 12px;
+  --blur-md: 14px;
+  --blur-lg: 24px;
+  --blur-xl: 32px;
+  --blur-2xl: 50px;
+
+  --icon-xs: 16px;
+  --icon-sm: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 40px;
+  --icon-2xl: 48px;
+
+  --transition-fast: 0.1s;
+  --transition-base: 0.2s;
+  --transition-slow: 0.3s;
+
+  --z-dropdown: 1000;
+  --z-modal: 2000;
+  --z-popover: 3000;
+  --z-tooltip: 4000;
+  --z-overlay: 9999;
+}
+
+html.mac-mode {
+  --font-ui: "SF Pro Display", "Poppins", sans-serif;
+}
+
+html.\33 d-mode #taskbar,
+html.\33 d-mode #desktop,
+html.\33 d-mode #start-menu,
+html.\33 d-mode .tray-content {
+  display: none !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-ui);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+html {
+  font-size: calc(16px * var(--font-size-scale)) !important;
+}
+
+body {
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+h1 {
+  font-size: var(--text-2xl, 24px);
+  line-height: var(--lh-tight);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--text-xl, 20px);
+  line-height: var(--lh-tight);
+}
+h3 {
+  font-size: var(--text-lg, 18px);
+  line-height: var(--lh-tight);
+}
+h4 {
+  font-size: var(--text-md, 16px);
+  line-height: var(--lh-body);
+}
+h5 {
+  font-size: var(--text-base, 14px);
+  line-height: var(--lh-body);
+}
+h6 {
+  font-size: var(--text-sm, 12px);
+  line-height: var(--lh-body);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+#selection-box {
+  border: 1px solid oklch(65% 0.12 230);
+  background: oklch(65% 0.12 230 / 0.18);
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.14) transparent;
+}
+
+html[data-theme] * {
+  scrollbar-color: var(--glass-hover) transparent;
+}
+
+.app-menubar {
+  display: flex;
+  align-items: center;
+  margin-bottom: -10px;
+  gap: 2px;
+  padding: 4px 8px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 12px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.app-menubar-item {
+  position: relative;
+  padding: 4px 10px;
+  cursor: default;
+  color: var(--text-secondary);
+  border-radius: var(--r-sm);
+  transition: background 0.1s;
+}
+
+.app-menubar-item:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+}
+
+.app-menubar-item.active {
+  background: var(--brand-dim);
+  color: var(--text-primary);
+}
+
+html[data-theme="crt"]::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+html[data-theme="crt"]::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999998;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+html[data-theme="crt"] * {
+  text-shadow:
+    0 0 2px oklch(75% 0.25 145 / 0.5),
+    0 0 4px oklch(75% 0.25 145 / 0.3);
+}
+
+html[data-theme="frutiger-aero"] .window,
+html[data-theme="frutiger-aero"] .context-menu,
+html[data-theme="frutiger-aero"] .taskbar {
+  backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid oklch(100% 0 0 / 0.7);
+  box-shadow:
+    0 10px 30px oklch(60% 0.08 220 / 0.18),
+    inset 0 1px 0 oklch(100% 0 0 / 0.85),
+    inset 0 -1px 0 oklch(70% 0.08 210 / 0.12);
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .window-header,
+html[data-theme="frutiger-aero"] .window-content {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-label-title,
+html[data-theme="frutiger-aero"] .settings-label-desc {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-btn {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] button {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .workspace-btn {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .workspace-btn:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .workspace-btn.active {
+  background: rgba(72, 16, 220, 0.15) !important;
+  border-color: rgba(72, 16, 220, 0.4) !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .workspace-btn.workspace-add {
+  background: transparent !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] .workspace-btn.workspace-add:hover {
+  color: #1a1a2e !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="frutiger-aero"] #audio-mixer-panel {
+  background: var(--window-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="frutiger-aero"] .am-title {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="frutiger-aero"] .am-close-btn {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="frutiger-aero"] .am-close-btn:hover {
+  background: rgba(220, 50, 50, 0.15) !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .am-app-name {
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] .am-vol-label {
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] .am-empty {
+  color: #5a5a7e !important;
+}
+
+html[data-theme="frutiger-aero"] .am-slider {
+  background: rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="frutiger-aero"] .am-slider::-webkit-slider-thumb {
+  background: #1a1a2e !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+html[data-theme="frutiger-aero"] .am-slider::-moz-range-thumb {
+  background: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .docked {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 255, 0.95)) !important;
+  border: 2px solid #4810dc !important;
+  box-shadow: 0 0 20px rgba(72, 16, 220, 0.25) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-btn.danger {
+  background: #ff4d4f !important;
+  color: white !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-card-header[style*="color: #ff4d4f"] {
+  color: #ff4d4f !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-label-title[style*="color: #ff4d4f"] {
+  color: #ff4d4f !important;
+}
+
+html[data-theme="frutiger-aero"] h2[style*="color:#fff"] {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] p[style*="color:rgba(255,255,255,0.5)"],
+html[data-theme="frutiger-aero"] p[style*="color:rgba(255,255,255,0.75)"] {
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] span[style*="color:rgba(255,255,255,0.4)"] {
+  color: #5a5a7e !important;
+}
+
+html[data-theme="frutiger-aero"] .start-menu-item:hover {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .start-menu-item:hover svg {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .start-menu-item:hover span {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .start-cat.active {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .start-cat.active i {
+  color: var(--brand) !important;
+}
+
+html[data-theme="frutiger-aero"] .start-cat:hover {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .start-item:hover {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .start-signout-btn:hover,
+html[data-theme="frutiger-aero"] .start-lock-btn:hover {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .user-tooltip {
+  color: #1a1a2e !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-label-title {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-label-desc {
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-card-header {
+  color: #4a4a6e !important;
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-input {
+  background: rgba(255, 255, 255, 0.8) !important;
+  color: #1a1a2e !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-input::placeholder {
+  color: #5a5a7e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-btn {
+  color: #1a1a2e !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-btn[data-alignment].active {
+  color: white !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-btn[data-alignment].active i:first-child {
+  color: white !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-grid-toggle {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-grid-toggle span:first-child {
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-grid-toggle:hover {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-status-text {
+  color: #5a5a7e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-range-value {
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-select {
+  background: rgba(255, 255, 255, 0.8) !important;
+  color: #1a1a2e !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-select option {
+  background: #fff !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .settings-category-header {
+  color: #1a1a2e !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="frutiger-aero"] .yuki-settings-sidebar {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="frutiger-aero"] .yuki-settings-search input {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .yuki-settings-nav li {
+  color: #4a4a6e !important;
+}
+
+html[data-theme="frutiger-aero"] .yuki-settings-nav li:hover {
+  color: #1a1a2e !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="frutiger-aero"] .yuki-settings-nav li.active {
+  color: var(--brand) !important;
+}
+
+html[data-theme="frutiger-aero"] .wp-card-name {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .wp-card-btn {
+  color: #4a4a6e !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="frutiger-aero"] .wp-card-btn:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .wp-preview-label {
+  color: #1a1a2e !important;
+}
+
+html[data-theme="frutiger-aero"] .wp-action-btn {
+  color: #4a4a6e !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="frutiger-aero"] .wp-action-btn:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+  color: #1a1a2e !important;
+}
+
+html[data-theme="arctic"] .settings-label-title {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="arctic"] .settings-label-desc {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="arctic"] .settings-card-header {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .settings-input {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .settings-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="arctic"] .settings-btn {
+  color: var(--text-primary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .settings-btn:hover:not(:disabled) {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .settings-btn[data-alignment].active {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="arctic"] .settings-btn[data-alignment].active i:first-child {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="arctic"] .settings-grid-toggle {
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .settings-grid-toggle span:first-child {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="arctic"] .settings-grid-toggle:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .settings-status-text {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="arctic"] .settings-range-value {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="arctic"] .settings-select {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .settings-select option {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="arctic"] .settings-category-header {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .yuki-settings-sidebar {
+  background: var(--surface-1) !important;
+  border-right: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .yuki-settings-search input {
+  background: var(--surface-1) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="arctic"] .yuki-settings-nav li {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="arctic"] .yuki-settings-nav li:hover {
+  color: var(--text-primary) !important;
+  background: var(--glass-hover) !important;
+}
+
+html[data-theme="arctic"] .yuki-settings-nav li.active {
+  color: var(--brand) !important;
+}
+
+html[data-theme="arctic"] .wp-card-name {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="arctic"] .wp-card-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .wp-card-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="arctic"] .wp-preview-label {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="arctic"] .wp-action-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="arctic"] .wp-action-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="sakura"] .settings-label-title {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="sakura"] .settings-label-desc {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="sakura"] .settings-card-header {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .settings-input {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .settings-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="sakura"] .settings-btn {
+  color: var(--text-primary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .settings-btn:hover:not(:disabled) {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .settings-btn[data-alignment].active {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="sakura"] .settings-btn[data-alignment].active i:first-child {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="sakura"] .settings-grid-toggle {
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .settings-grid-toggle span:first-child {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="sakura"] .settings-grid-toggle:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .settings-status-text {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="sakura"] .settings-range-value {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="sakura"] .settings-select {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .settings-select option {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="sakura"] .settings-category-header {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .yuki-settings-sidebar {
+  background: var(--surface-1) !important;
+  border-right: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .yuki-settings-search input {
+  background: var(--surface-1) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="sakura"] .yuki-settings-nav li {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="sakura"] .yuki-settings-nav li:hover {
+  color: var(--text-primary) !important;
+  background: var(--glass-hover) !important;
+}
+
+html[data-theme="sakura"] .yuki-settings-nav li.active {
+  color: var(--brand) !important;
+}
+
+html[data-theme="sakura"] .wp-card-name {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="sakura"] .wp-card-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .wp-card-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="sakura"] .wp-preview-label {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="sakura"] .wp-action-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="sakura"] .wp-action-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="nordic"] .settings-label-title {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="nordic"] .settings-label-desc {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="nordic"] .settings-card-header {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .settings-input {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .settings-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="nordic"] .settings-btn {
+  color: var(--text-primary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .settings-btn:hover:not(:disabled) {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .settings-btn[data-alignment].active {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="nordic"] .settings-btn[data-alignment].active i:first-child {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="nordic"] .settings-grid-toggle {
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .settings-grid-toggle span:first-child {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="nordic"] .settings-grid-toggle:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .settings-status-text {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="nordic"] .settings-range-value {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="nordic"] .settings-select {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .settings-select option {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="nordic"] .settings-category-header {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .yuki-settings-sidebar {
+  background: var(--surface-1) !important;
+  border-right: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .yuki-settings-search input {
+  background: var(--surface-1) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="nordic"] .yuki-settings-nav li {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="nordic"] .yuki-settings-nav li:hover {
+  color: var(--text-primary) !important;
+  background: var(--glass-hover) !important;
+}
+
+html[data-theme="nordic"] .yuki-settings-nav li.active {
+  color: var(--brand) !important;
+}
+
+html[data-theme="nordic"] .wp-card-name {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="nordic"] .wp-card-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .wp-card-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="nordic"] .wp-preview-label {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="nordic"] .wp-action-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="nordic"] .wp-action-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="gameboy"] .settings-label-title {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="gameboy"] .settings-label-desc {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="gameboy"] .settings-card-header {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .settings-input {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .settings-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="gameboy"] .settings-btn {
+  color: var(--text-primary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .settings-btn:hover:not(:disabled) {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .settings-btn[data-alignment].active {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="gameboy"] .settings-btn[data-alignment].active i:first-child {
+  color: var(--text-on-brand) !important;
+}
+
+html[data-theme="gameboy"] .settings-grid-toggle {
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .settings-grid-toggle span:first-child {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="gameboy"] .settings-grid-toggle:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .settings-status-text {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="gameboy"] .settings-range-value {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="gameboy"] .settings-select {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .settings-select option {
+  background: var(--surface-1) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="gameboy"] .settings-category-header {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .yuki-settings-sidebar {
+  background: var(--surface-1) !important;
+  border-right: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .yuki-settings-search input {
+  background: var(--surface-1) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="gameboy"] .yuki-settings-nav li {
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="gameboy"] .yuki-settings-nav li:hover {
+  color: var(--text-primary) !important;
+  background: var(--glass-hover) !important;
+}
+
+html[data-theme="gameboy"] .yuki-settings-nav li.active {
+  color: var(--brand) !important;
+}
+
+html[data-theme="gameboy"] .wp-card-name {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="gameboy"] .wp-card-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .wp-card-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="gameboy"] .wp-preview-label {
+  color: var(--text-primary) !important;
+}
+
+html[data-theme="gameboy"] .wp-action-btn {
+  color: var(--text-secondary) !important;
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+html[data-theme="gameboy"] .wp-action-btn:hover {
+  background: var(--glass-hover) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+html[data-theme] .window {
+  background: var(--window-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 10px 64px var(--shadow-color),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+html[data-theme] .window.transparent {
+  background: transparent;
+}
+
+html[data-theme] .window.transparent .window-header {
+  background: rgba(20, 20, 30, 0.85);
+  backdrop-filter: blur(32px);
+}
+
+html[data-theme] .window-content {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+html[data-theme] .window.transparent .window-content {
+  background: transparent;
+}
+
+html[data-theme] .context-menu-glass {
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 10px 30px var(--shadow-color),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+html[data-theme] .context-menu-item {
+  color: var(--text-primary);
+}
+
+html[data-theme] .context-menu-item:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme] #taskbar {
+  background: var(--bg-secondary);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 -4px 32px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+html[data-theme] button {
+  color: var(--text-primary);
+}
+
+html[data-theme] button:hover {
+  background: var(--brand-dim);
+  color: var(--text-primary);
+  border-color: var(--brand);
+}
+
+html[data-theme] .explorer-sidebar {
+  background: var(--surface-1);
+  border-right: 1px solid var(--glass-border);
+  color: var(--text-primary);
+}
+
+html[data-theme] .explorer-sidebar .nav-item {
+  color: var(--text-secondary);
+}
+
+html[data-theme] .explorer-sidebar .nav-item:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme] .explorer-sidebar .nav-item--active {
+  background: var(--brand-dim);
+  color: var(--brand);
+}
+
+html[data-theme] .tooltip {
+  background: var(--surface-3);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+html[data-theme] .settings-card {
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+}
+
+html[data-theme] .settings-card-header {
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+html[data-theme] .settings-label-title {
+  color: var(--text-primary);
+}
+
+html[data-theme] .settings-label-desc {
+  color: var(--text-secondary);
+}
+
+html[data-theme] .glass {
+  background: var(--glass);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+}
+
+html[data-theme] .glass:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme] .dropdown {
+  background: var(--menu-bg);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+html[data-theme] .dropdown-item {
+  color: var(--text-primary);
+}
+
+html[data-theme] .dropdown-item:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme] *::-webkit-scrollbar-thumb {
+  background: var(--glass-hover);
+  border-radius: 6px;
+}
+
+html[data-theme] .notification {
+  background: var(--surface-1);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+html[data-theme] .overlay-dialog {
+  background: var(--surface-1);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+html[data-theme] .explorer-confirmation-overlay {
+  background: var(--overlay-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+html[data-theme] .icon.selectable:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme] .icon.selectable.selected {
+  background: var(--brand-dim) !important;
+  color: var(--brand) !important;
+  border: 1px solid var(--brand) !important;
+}
+
+html[data-theme="light"] .icon.selectable,
+html[data-theme="light"] .icon.selectable div,
+html[data-theme="cherry"] .icon.selectable,
+html[data-theme="cherry"] .icon.selectable div,
+html[data-theme="github-light"] .icon.selectable,
+html[data-theme="github-light"] .icon.selectable div,
+html[data-theme="minimal-gray"] .icon.selectable,
+html[data-theme="minimal-gray"] .icon.selectable div,
+html[data-theme="paper"] .icon.selectable,
+html[data-theme="paper"] .icon.selectable div,
+html[data-theme="macos-fluent"] .icon.selectable,
+html[data-theme="macos-fluent"] .icon.selectable div,
+html[data-theme="windows-fluent"] .icon.selectable,
+html[data-theme="windows-fluent"] .icon.selectable div,
+html[data-theme="material-you"] .icon.selectable,
+html[data-theme="material-you"] .icon.selectable div,
+html[data-theme="sepia"] .icon.selectable,
+html[data-theme="sepia"] .icon.selectable div,
+html[data-theme="sakura"] .icon.selectable,
+html[data-theme="sakura"] .icon.selectable div,
+html[data-theme="arctic"] .icon.selectable,
+html[data-theme="arctic"] .icon.selectable div,
+html[data-theme="nordic"] .icon.selectable,
+html[data-theme="nordic"] .icon.selectable div,
+html[data-theme="gameboy"] .icon.selectable,
+html[data-theme="gameboy"] .icon.selectable div,
+html[data-theme="frutiger-aero"] .icon.selectable,
+html[data-theme="frutiger-aero"] .icon.selectable div,
+html[data-theme="solarized-light"] .icon.selectable,
+html[data-theme="solarized-light"] .icon.selectable div {
+  text-shadow: none !important;
+}
+
+html[data-theme] .file-item {
+  color: var(--text-primary);
+}
+
+html[data-theme] .file-item:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme] .file-item.selected {
+  background: var(--brand-dim);
+  color: var(--brand);
+  border: 1px solid var(--brand);
+}
+
+html[data-theme] .conflict-header {
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+html[data-theme] .conflict-title {
+  color: var(--text-primary);
+}
+
+html[data-theme] .conflict-message {
+  color: var(--text-secondary);
+}
+
+html[data-theme] .conflict-file {
+  color: var(--brand);
+}
+
+html[data-theme] .conflict-btn {
+  background: var(--surface-2);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+
+html[data-theme] .conflict-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  border-color: var(--brand);
+}
+
+html[data-theme] .conflict-btn-replace {
+  color: var(--error);
+}
+
+html[data-theme] .conflict-btn-keep {
+  color: var(--brand);
+}
+
+html[data-theme] .conflict-btn-skip {
+  color: var(--text-secondary);
+}
+
+html[data-theme] .conflict-footer {
+  color: var(--text-secondary);
+}
+
+html[data-theme] #lock-unlock-btn {
+  background: var(--surface-2);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+
+html[data-theme] #lock-unlock-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  border-color: var(--brand);
+}
+
+html[data-theme] .lock-time {
+  color: var(--text-secondary);
+}
+
+html[data-theme] .start-menu {
+  background: var(--glass);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+html.transparent-ui.tp-window-body[data-theme] .window {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(var(--tp-blur-window, 40px)) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(var(--tp-blur-window, 40px)) saturate(1.4) !important;
+  --bg-primary: transparent;
+  --bg-secondary: transparent;
+  --bg-tertiary: transparent;
+  --surface-1: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.04);
+  --surface-3: rgba(255, 255, 255, 0.05);
+  --glass: rgba(255, 255, 255, 0.04);
+}
+
+html.transparent-ui.tp-window-header[data-theme] .window-header {
+  background: black;
+  backdrop-filter: blur(var(--tp-blur-window, 40px)) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(var(--tp-blur-window, 40px)) saturate(1.4) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+html.transparent-ui.tp-window-body[data-theme] .window-content {
+  background: rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(var(--tp-blur-window, 40px)) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(var(--tp-blur-window, 40px)) saturate(1.4) !important;
+}
+
+html.transparent-ui.tp-taskbar[data-theme] #taskbar {
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(var(--tp-blur-taskbar, 32px)) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(var(--tp-blur-taskbar, 32px)) saturate(1.4) !important;
+}
+
+html.transparent-ui.tp-start-menu[data-theme] .start-menu {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(var(--tp-blur-startmenu, 32px)) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(var(--tp-blur-startmenu, 32px)) saturate(1.4) !important;
+}
+
+html.transparent-ui.tp-context[data-theme] .context-menu,
+html.transparent-ui.tp-context[data-theme] .context-menu-glass,
+html.transparent-ui.tp-context[data-theme] #context-menu,
+html.transparent-ui.tp-context[data-theme] #taskbar-context-menu,
+html.transparent-ui.tp-context[data-theme] .start-style-menu,
+html.transparent-ui.tp-context[data-theme] .tray-menu,
+html.transparent-ui.tp-context[data-theme] .submenu {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(var(--tp-blur-context, 20px)) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(var(--tp-blur-context, 20px)) saturate(1.4) !important;
+}
+
+html.transparent-ui.tp-tray #audio-mixer-panel,
+html.transparent-ui.tp-tray #network-tray-popup,
+html.transparent-ui.tp-tray #clipboard-tray-popup,
+html.transparent-ui.tp-tray #display-performance-tray-popup,
+html.transparent-ui.tp-tray #brightness-tray-popup,
+html.transparent-ui.tp-tray #media-player-panel,
+html.transparent-ui.tp-tray #tray-overflow-popup,
+html.transparent-ui.tp-tray #calendar-popup,
+html.transparent-ui.tp-tray .calendar-popup {
+  background: rgba(0, 0, 0, 0.12) !important;
+  backdrop-filter: blur(var(--tp-blur-tray, 32px)) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(var(--tp-blur-tray, 32px)) saturate(1.4) !important;
+  --bg-primary: transparent;
+  --bg-secondary: transparent;
+  --bg-tertiary: transparent;
+  --surface-1: transparent;
+  --surface-2: transparent;
+  --surface-3: transparent;
+  --glass: transparent;
+  --glass-hover: rgba(255, 255, 255, 0.06);
+  --window-bg: transparent;
+  --menu-bg: transparent;
+}
+
+html.transparent-ui.tp-tray #network-tray-popup .network-header,
+html.transparent-ui.tp-tray #network-tray-popup .network-footer,
+html.transparent-ui.tp-tray #network-tray-popup .network-settings-btn,
+html.transparent-ui.tp-tray #network-tray-popup .network-item,
+html.transparent-ui.tp-tray #clipboard-tray-popup .clipboard-popup-header,
+html.transparent-ui.tp-tray #clipboard-tray-popup .clipboard-item,
+html.transparent-ui.tp-tray #display-performance-tray-popup .display-performance-popup-content,
+html.transparent-ui.tp-tray .calendar-popup .calendar-body,
+html.transparent-ui.tp-tray .calendar-popup .calendar-header {
+  background: transparent !important;
+}
+
+html.transparent-ui.tp-window-body[data-theme="light"] .window,
+html.transparent-ui.tp-window-body[data-theme="cherry"] .window,
+html.transparent-ui.tp-window-body[data-theme="github-light"] .window,
+html.transparent-ui.tp-window-body[data-theme="minimal-gray"] .window,
+html.transparent-ui.tp-window-body[data-theme="paper"] .window,
+html.transparent-ui.tp-window-body[data-theme="windows-fluent"] .window,
+html.transparent-ui.tp-window-body[data-theme="material-you"] .window,
+html.transparent-ui.tp-window-body[data-theme="sepia"] .window,
+html.transparent-ui.tp-window-body[data-theme="sakura"] .window,
+html.transparent-ui.tp-window-body[data-theme="solarized-light"] .window {
+  background: rgba(255, 255, 255, 0.55) !important;
+}
+
+html.transparent-ui.tp-window-header[data-theme="light"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="cherry"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="github-light"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="minimal-gray"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="paper"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="windows-fluent"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="material-you"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="sepia"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="sakura"] .window-header,
+html.transparent-ui.tp-window-header[data-theme="solarized-light"] .window-header {
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+html.transparent-ui.tp-window-body[data-theme="light"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="cherry"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="github-light"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="minimal-gray"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="paper"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="windows-fluent"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="material-you"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="sepia"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="sakura"] .window-content,
+html.transparent-ui.tp-window-body[data-theme="solarized-light"] .window-content {
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+html.transparent-ui.tp-taskbar[data-theme="light"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="cherry"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="github-light"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="minimal-gray"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="paper"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="windows-fluent"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="material-you"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="sepia"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="sakura"] #taskbar,
+html.transparent-ui.tp-taskbar[data-theme="solarized-light"] #taskbar {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+html.transparent-ui.tp-start-menu[data-theme="light"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="cherry"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="github-light"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="minimal-gray"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="paper"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="windows-fluent"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="material-you"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="sepia"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="sakura"] .start-menu,
+html.transparent-ui.tp-start-menu[data-theme="solarized-light"] .start-menu {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+html.transparent-ui.tp-window-body[data-theme="macos-fluent"] .window {
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+html.transparent-ui.tp-window-header[data-theme="macos-fluent"] .window-header {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+html.transparent-ui.tp-window-body[data-theme="macos-fluent"] .window-content {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+html.transparent-ui.tp-taskbar[data-theme="macos-fluent"] #taskbar {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+html.transparent-ui.tp-start-menu[data-theme="macos-fluent"] .start-menu {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme] .start-menu-item {
+  color: var(--text-primary);
+}
+
+html[data-theme] .start-menu-item:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme] .nav-item i,
+html[data-theme] .explorer-storage i {
+  color: var(--brand);
+}
+
+.wallpaper-enter {
+  animation: wallpaper-enter 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes wallpaper-enter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

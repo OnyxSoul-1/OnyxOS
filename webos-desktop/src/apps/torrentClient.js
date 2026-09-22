@@ -210,7 +210,7 @@ export class TorrentClientApp extends BaseApp {
     showAboutDialog({
       title: "Torrent Client",
       version: "1.0.0",
-      description: "A WebTorrent-based torrent client for YukiOS.",
+      description: "A WebTorrent-based torrent client for OnyxOS.",
       icon: "fas fa-download",
       iconType: "fontawesome"
     });
@@ -549,8 +549,8 @@ export class TorrentClientApp extends BaseApp {
       this.notify("Torrent Client", "This torrent is already added", "info", 3000, "fas fa-info-circle");
       return;
     }
-    os.dialog.confirm("Save to YukiOS?", "Save files to YukiOS when the download finishes?").then((saveToYukiOS) => {
-      this.startDownloadWithOptions({ magnetUri }, saveToYukiOS, null);
+    os.dialog.confirm("Save to OnyxOS?", "Save files to OnyxOS when the download finishes?").then((saveToOnyxOS) => {
+      this.startDownloadWithOptions({ magnetUri }, saveToOnyxOS, null);
     });
   }
 
@@ -664,8 +664,8 @@ export class TorrentClientApp extends BaseApp {
   }
 
   onTorrentComplete(torrent) {
-    if (torrent.saveToYukiOS) {
-      this.saveToYukiOS(torrent);
+    if (torrent.saveToOnyxOS) {
+      this.saveToOnyxOS(torrent);
     }
   }
 
@@ -731,7 +731,7 @@ export class TorrentClientApp extends BaseApp {
               <input type="checkbox" id="torrent-save-yukios-toggle" checked />
               <span class="torrent-toggle-slider"></span>
             </span>
-            Save to YukiOS when done
+            Save to OnyxOS when done
           </label>
         </div>
         <div class="torrent-dialog-actions">
@@ -755,7 +755,7 @@ export class TorrentClientApp extends BaseApp {
     overlay.querySelector("#torrent-dlg-cancel").addEventListener("click", close);
 
     overlay.querySelector("#torrent-dlg-start").addEventListener("click", () => {
-      const saveToYukiOS = overlay.querySelector("#torrent-save-yukios-toggle").checked;
+      const saveToOnyxOS = overlay.querySelector("#torrent-save-yukios-toggle").checked;
 
       const selectedIndices = new Set();
       overlay.querySelectorAll(".torrent-file-select-cb").forEach((cb) => {
@@ -763,12 +763,12 @@ export class TorrentClientApp extends BaseApp {
       });
 
       close();
-      this.startDownloadWithOptions({ parsedTorrent }, saveToYukiOS, selectedIndices.size > 0 ? selectedIndices : null);
+      this.startDownloadWithOptions({ parsedTorrent }, saveToOnyxOS, selectedIndices.size > 0 ? selectedIndices : null);
     });
   }
 
-  startDownloadWithOptions(item, saveToYukiOS, selectedFileIndices) {
-    const wrappedItem = { ...item, saveToYukiOS, selectedFileIndices };
+  startDownloadWithOptions(item, saveToOnyxOS, selectedFileIndices) {
+    const wrappedItem = { ...item, saveToOnyxOS, selectedFileIndices };
     if (this.activeDownloadCount < this.maxConcurrentDownloads) {
       this.startDownloadItem(wrappedItem);
     } else {
@@ -789,7 +789,7 @@ export class TorrentClientApp extends BaseApp {
     this.activeDownloadCount++;
     const startCb = (t) => {
       t.paused = false;
-      t.saveToYukiOS = item.saveToYukiOS || false;
+      t.saveToOnyxOS = item.saveToOnyxOS || false;
       if (item.selectedFileIndices && t.files) {
         t.files.forEach((f, i) => {
           if (!item.selectedFileIndices.has(i)) {
@@ -1038,7 +1038,7 @@ export class TorrentClientApp extends BaseApp {
           <i class="fas fa-download"></i> Save to Computer
         </button>
         <button class="torrent-detail-action-btn" data-action="yukios" data-infohash="${infoHash}">
-          <i class="fas fa-hdd"></i> Save to YukiOS
+          <i class="fas fa-hdd"></i> Save to OnyxOS
         </button>
       `
       : "";
@@ -1083,7 +1083,7 @@ export class TorrentClientApp extends BaseApp {
         if (action === "computer") {
           this.saveToComputer(t);
         } else if (action === "yukios") {
-          this.saveToYukiOS(t);
+          this.saveToOnyxOS(t);
         } else if (action === "pause") {
           t.pause();
           t.paused = true;
@@ -1254,7 +1254,7 @@ export class TorrentClientApp extends BaseApp {
     });
   }
 
-  async saveToYukiOS(torrent) {
+  async saveToOnyxOS(torrent) {
     if (!torrent.done) {
       os.dialog.alert("Not Ready", "Wait for the download to finish before saving.");
       return;
@@ -1280,7 +1280,7 @@ export class TorrentClientApp extends BaseApp {
       let savedCount = 0;
       for (const file of files) {
         const filePath = `${savePath}/${this.sanitizeFileName(file.name)}`;
-        await this.saveFileToYukiOS(file, filePath);
+        await this.saveFileToOnyxOS(file, filePath);
         savedCount++;
       }
       this.notify(
@@ -1291,12 +1291,12 @@ export class TorrentClientApp extends BaseApp {
         "fas fa-check-circle"
       );
     } catch (err) {
-      console.error("Error saving to YukiOS:", err);
+      console.error("Error saving to OnyxOS:", err);
       os.dialog.alert("Save Failed", `Failed to save files: ${err.message}`);
     }
   }
 
-  async saveFileToYukiOS(file, filePath) {
+  async saveFileToOnyxOS(file, filePath) {
     return new Promise((resolve, reject) => {
       file.getBlob(async (err, blob) => {
         if (err) {

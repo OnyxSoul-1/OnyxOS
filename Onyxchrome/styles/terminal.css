@@ -1,0 +1,295 @@
+[id^="terminal-win"] {
+  background: transparent !important;
+}
+
+[id^="terminal-win"] .window-content.terminal-content,
+html[data-theme] [id^="terminal-win"] .window-content.terminal-content {
+  background: transparent;
+  backdrop-filter: blur(40px) saturate(1.4);
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
+  color: var(--text-primary, #c0c0c0);
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+  font-size: 16px;
+  overflow-y: auto;
+  height: calc(100% - 40px);
+  cursor: text;
+  user-select: text;
+}
+
+.terminal-content ::selection,
+html[data-theme] .terminal-content ::selection {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.terminal-output {
+  flex-shrink: 0;
+  white-space: pre;
+  min-height: 20px;
+}
+
+.terminal-output .cmd-line {
+  display: block;
+}
+
+.terminal-output .cmd-line .prompt-user {
+  color: #00ff00;
+}
+
+.terminal-output .cmd-line .prompt-at {
+  color: var(--text-primary, #c0c0c0);
+}
+
+.terminal-output .cmd-line .prompt-host {
+  color: #00ff00;
+}
+
+.terminal-output .cmd-line .prompt-sep {
+  color: var(--text-primary, #c0c0c0);
+}
+
+.terminal-output .cmd-line .prompt-path {
+  color: var(--brand, #0080ff);
+}
+
+.terminal-output .cmd-line .prompt-dollar {
+  color: #00ff00;
+}
+
+.terminal-output .cmd-line .cmd-text {
+  color: var(--text-primary, #e0e0e0);
+}
+
+.terminal-input-line {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-input-line .prompt-user {
+  color: #00ff00;
+}
+
+.terminal-input-line .prompt-at {
+  color: var(--text-primary, #c0c0c0);
+}
+
+.terminal-input-line .prompt-host {
+  color: #00ff00;
+}
+
+.terminal-input-line .prompt-sep {
+  color: var(--text-primary, #c0c0c0);
+}
+
+.terminal-input-line .prompt-path {
+  color: var(--brand, #0080ff);
+}
+
+.terminal-input-line .prompt-dollar {
+  color: #00ff00;
+  margin-right: 8px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary, #e0e0e0);
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+  font-size: 14px;
+  outline: none;
+  caret-color: var(--text-primary, #ffffff);
+  resize: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.4;
+  max-height: 50vh;
+}
+
+.terminal-input:disabled {
+  opacity: 0.4;
+}
+
+.terminal-prompt {
+  color: var(--brand, #0080ff);
+}
+
+.terminal a {
+  color: var(--brand, #0080ff);
+}
+
+.terminal a:visited {
+  color: color-mix(in srgb, var(--brand, #0080ff) 70%, white);
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: var(--glass, rgba(255, 255, 255, 0.15));
+}
+
+.terminal-output::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-stop-btn {
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  right: 8px;
+  padding: 4px 12px;
+  background: var(--error, #cc0000);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 10;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+  font-family: inherit;
+}
+
+.terminal-stop-btn:hover {
+  opacity: 1;
+}
+
+@keyframes terminal-cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.terminal-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-tabs.hidden {
+  display: none;
+}
+
+.terminal-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  user-select: none;
+  overflow: hidden;
+}
+
+.terminal-tab-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.terminal-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.terminal-tab.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.terminal-tab-close {
+  opacity: 0.5;
+  padding: 0 2px;
+  border-radius: 3px;
+  line-height: 1;
+  transition:
+    opacity 0.15s,
+    background 0.15s;
+}
+
+.terminal-tab:hover .terminal-tab-close {
+  opacity: 0.7;
+}
+
+.terminal-tab-close:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.terminal-tab-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  background: transparent;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  user-select: none;
+}
+
+.terminal-tab-add:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.terminal-sudo-prompt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.terminal-sudo-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.terminal-sudo-input:focus {
+  border-color: var(--brand);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ansi-escape {
+  display: none;
+}
+
+::highlight(terminal-preserved) {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.terminal-content.preserve-selection ::selection,
+html[data-theme] .terminal-content.preserve-selection ::selection {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}

@@ -47,7 +47,7 @@ export class MonacoApp extends BaseApp {
       try {
         await this.loadMonaco();
       } catch (e) {
-        os.notify.send("Couldn't load Yuki Code", AppSource.MONACO);
+        os.notify.send("Couldn't load Onyx Code", AppSource.MONACO);
         return;
       }
     }
@@ -392,7 +392,7 @@ export class MonacoApp extends BaseApp {
   }
 
   getHeaderHTML(title) {
-    return buildWindowHeader("Yuki Code");
+    return buildWindowHeader("Onyx Code");
   }
 
   createTab(tabId, title, isDirty = false) {
@@ -425,7 +425,7 @@ export class MonacoApp extends BaseApp {
 
   createNewWindow() {
     const winId = `monaco-window-${Date.now()}`;
-    const win = os.window.create(winId, "Yuki Code", "900px", "650px", {
+    const win = os.window.create(winId, "Onyx Code", "900px", "650px", {
       icon: "fas fa-code"
     });
 
@@ -591,7 +591,7 @@ export class MonacoApp extends BaseApp {
   initTerminal() {
     if (!this.terminalOutput) return;
     this.terminalOutput.innerHTML = "";
-    this.printToTerminal("YukiOS Terminal");
+    this.printToTerminal("OnyxOS Terminal");
     this.printToTerminal("Type 'help' for available commands");
     this.updateTerminalPrompt();
   }
@@ -1654,7 +1654,7 @@ export class MonacoApp extends BaseApp {
       showDocs: () => window.open("https://code.visualstudio.com/docs", "_blank"),
       about: () => {
         showAboutDialog({
-          title: "Yuki Code",
+          title: "Onyx Code",
           version: "1.0.0",
           description:
             "A powerful code editor built on Monaco, the engine behind VS Code. Write, edit, and manage code with syntax highlighting, multi-tab editing, and an integrated terminal.",

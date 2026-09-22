@@ -14,7 +14,7 @@ const DEFAULT_DOCK_APPS = [
   { appId: "launchpadApp", title: "Launchpad", icon: "papirus:actions/view-grid", color: "#888" },
   { appId: "commandPalette", title: "Finder", icon: "papirus:places/folder-blue", color: "#6ea8fe", isFinder: true },
   { appId: "explorerApp", title: "Explorer", icon: `static/icons/file.webp`, color: "#fff" },
-  { appId: "browserApp", title: "Yuki Browser", icon: "static/icons/firefox.webp", color: "#fff" },
+  { appId: "browserApp", title: "Onyx Browser", icon: "static/icons/firefox.webp", color: "#fff" },
   { appId: "terminalApp", title: "Terminal", icon: `static/icons/terminal.webp`, color: "#fff" },
   { appId: "settingsApp", title: "Settings", icon: "papirus:actions/configure", color: "#adb5bd" },
   { appId: "calculatorApp", title: "Calculator", icon: "papirus:apps/accessories-calculator", color: "#20c997" },

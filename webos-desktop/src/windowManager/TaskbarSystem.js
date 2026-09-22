@@ -583,7 +583,7 @@ export class TaskbarSystem {
         {
           winId: "browser-pinned",
           appId: "browserApp",
-          title: "Yuki Browser",
+          title: "Onyx Browser",
           iconValue: resolveIconUrl("static/icons/firefox.webp"),
           color: null
         },

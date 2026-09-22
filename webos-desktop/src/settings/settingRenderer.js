@@ -1553,7 +1553,7 @@ export function renderAutostartSettings() {
       <div class="settings-category-header">Autostart</div>
       <div class="settings-card">
         <div class="settings-card-header"><i class="fas fa-power-off"></i> Launch on Startup</div>
-        <p class="autostart-intro">Choose which system apps open automatically when YukiOS starts.</p>
+        <p class="autostart-intro">Choose which system apps open automatically when OnyxOS starts.</p>
         <div class="autostart-toolbar">
           <div class="autostart-search-wrap">
             <i class="fas fa-magnifying-glass"></i>
@@ -1589,11 +1589,11 @@ export function renderDataSettings() {
       </div>
 
       <div class="settings-card" style="margin-top: 16px;">
-        <div class="settings-card-header"><i class="fas fa-download"></i> Save YukiOS</div>
+        <div class="settings-card-header"><i class="fas fa-download"></i> Save OnyxOS</div>
         <div class="settings-row">
           <div class="settings-label-group">
             <span class="settings-label-title">Download Page</span>
-            <span class="settings-label-desc">Save a local copy of YukiOS</span>
+            <span class="settings-label-desc">Save a local copy of OnyxOS</span>
           </div>
           <button class="settings-btn" id="settingsDownloadPageBtn"><i class="fas fa-download"></i> Download</button>
         </div>
@@ -1797,7 +1797,7 @@ function renderCreditsSettings() {
         <img class="settings-credits-avatar" src="${resolveIconUrl("static/icons/reeyuki.webp")}" alt="Reeyuki" loading="lazy" onerror="this.style.display='none'" />
         <div class="settings-credits-author-info">
           <span class="settings-credits-author-name"><i class="fas fa-heart"></i> Made by Reeyuki</span>
-          <span class="settings-credits-author-sub">Creator of YukiOS</span>
+          <span class="settings-credits-author-sub">Creator of OnyxOS</span>
         </div>
         <a class="settings-credits-author-link" href="https://github.com/reeyuki" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
       </div>
@@ -1818,7 +1818,7 @@ export function renderAboutSettings() {
           <div style="display: flex; align-items: center; gap: 16px;">
             <img src="${resolveIconUrl("static/icons/logo.png")}" style="width: 48px; height: 48px; object-fit: contain;" onerror="this.src='favicon.ico'"/>
             <div>
-              <h2 style="margin:0;font-size:1.3em;font-weight:600;display:flex;align-items:center;gap:8px;color:var(--text-primary);">YukiOS <span style="font-size:0.65em;background:var(--brand-dim);color:var(--brand);padding:2px 8px;border-radius:4px;font-weight:500;">${YUKIOS_VERSION}</span></h2>
+              <h2 style="margin:0;font-size:1.3em;font-weight:600;display:flex;align-items:center;gap:8px;color:var(--text-primary);">OnyxOS <span style="font-size:0.65em;background:var(--brand-dim);color:var(--brand);padding:2px 8px;border-radius:4px;font-weight:500;">${YUKIOS_VERSION}</span></h2>
               <p style="margin:4px 0 0 0;color:var(--text-secondary);font-size:0.8em;">Desktop, in your browser</p>
             </div>
           </div>

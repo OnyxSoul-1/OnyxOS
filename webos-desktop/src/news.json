@@ -34,7 +34,7 @@
   },
   {
     "date": "September 6, 2026",
-    "label": "YukiOS v4.0.0",
+    "label": "OnyxOS v4.0.0",
     "sections": [
       {
         "icon": "fa-gamepad",
@@ -276,7 +276,7 @@
             "Reorganized Layout",
             "Settings now use a cleaner grouped sidebar with connectivity, wallpapers, appearance, animation speed slider, sound, apps, desktop, system, accounts, and privacy controls."
           ],
-          ["fa-power-off", "Autostart Manager", "Choose which system apps launch with YukiOS for quick management."],
+          ["fa-power-off", "Autostart Manager", "Choose which system apps launch with OnyxOS for quick management."],
           [
             "fa-hdd",
             "System Overview",
@@ -297,14 +297,14 @@
         "icon": "fa-folder-tree",
         "title": "System Library Folder",
         "items": [
-          ["fa-file-code", "Browse OS Source", "Open the System folder in Files to explore every YukiOS source code!"]
+          ["fa-file-code", "Browse OS Source", "Open the System folder in Files to explore every OnyxOS source code!"]
         ]
       }
     ]
   },
   {
     "date": "August 18, 2026",
-    "label": "YukiOS v3.0.0",
+    "label": "OnyxOS v3.0.0",
     "sections": [
       {
         "icon": "fa-users",
@@ -318,7 +318,7 @@
           [
             "fa-layer-group",
             "Mode Switcher App",
-            "Preview and switch between desktop modes: MacOS, SteamDeck, ChromeOS, Tiling, and YukiOS."
+            "Preview and switch between desktop modes: MacOS, SteamDeck, ChromeOS, Tiling, and OnyxOS."
           ]
         ]
       },
@@ -475,12 +475,12 @@
       },
       {
         "icon": "fa-user-lock",
-        "title": "YukiOS Account & Cloud Sync",
+        "title": "OnyxOS Account & Cloud Sync",
         "items": [
           [
             "fa-user-lock",
-            "YukiOS Account",
-            "Sign in to a YukiOS Account to carry your identity (nickname, avatar, bio) across every device."
+            "OnyxOS Account",
+            "Sign in to a OnyxOS Account to carry your identity (nickname, avatar, bio) across every device."
           ],
           [
             "fa-cloud-arrow-up",
@@ -491,7 +491,7 @@
       },
       {
         "icon": "fa-comment-dots",
-        "title": "Yuki Steam-style Friends panel",
+        "title": "Onyx Steam-style Friends panel",
         "items": [
           [
             "fa-unlock",
@@ -502,12 +502,12 @@
       },
       {
         "icon": "fa-map-signs",
-        "title": "Live Tour for Yuki Steam",
+        "title": "Live Tour for Onyx Steam",
         "items": [
           [
             "fa-map-signs",
-            "Yuki Steam Tour",
-            "Yuki Steam greets you with a quick walkthrough of the store, library, quests, and community on first open."
+            "Onyx Steam Tour",
+            "Onyx Steam greets you with a quick walkthrough of the store, library, quests, and community on first open."
           ]
         ]
       },
@@ -564,12 +564,12 @@
       },
       {
         "icon": "fa-users",
-        "title": "Yuki Steam Community Profiles",
+        "title": "Onyx Steam Community Profiles",
         "items": [
           [
             "fa-users",
-            "Yuki Steam Community Profiles",
-            "Yuki Steam Community profiles now show every player's achievements, playtime, current activity, and editable bios publicly."
+            "Onyx Steam Community Profiles",
+            "Onyx Steam Community profiles now show every player's achievements, playtime, current activity, and editable bios publicly."
           ]
         ]
       },
@@ -601,12 +601,12 @@
           [
             "fa-user-gear",
             "Account Hub",
-            "Turn your local profile into a registered account on a dedicated Yuki Steam login page."
+            "Turn your local profile into a registered account on a dedicated Onyx Steam login page."
           ],
           [
             "fa-user-slash",
             "Disable Social",
-            "Turn off friends, community, and activity completely from Yuki Steam Settings."
+            "Turn off friends, community, and activity completely from Onyx Steam Settings."
           ]
         ]
       }
@@ -742,12 +742,12 @@
     "sections": [
       {
         "icon": "fa-bell",
-        "title": "Yuki Steam Notifications",
+        "title": "Onyx Steam Notifications",
         "items": [
           [
             "fa-bell",
             "Now Playing Popup Toggle",
-            "Disable currently playing popups in Yuki Steam settings, or click one to open Yuki Steam Settings."
+            "Disable currently playing popups in Onyx Steam settings, or click one to open Onyx Steam Settings."
           ]
         ]
       }
@@ -941,7 +941,7 @@
       },
       {
         "icon": "fa-layer-group",
-        "title": "Tiling & Yuki Steam",
+        "title": "Tiling & Onyx Steam",
         "items": [
           [
             "fa-layer-group",
@@ -950,8 +950,8 @@
           ],
           [
             "fa-newspaper",
-            "Yuki Steam News System",
-            "Real news and updates feed inside the Yuki Steam app so you never miss a game announcement."
+            "Onyx Steam News System",
+            "Real news and updates feed inside the Onyx Steam app so you never miss a game announcement."
           ]
         ]
       }
@@ -962,7 +962,7 @@
     "sections": [
       {
         "icon": "fa-desktop",
-        "title": "Yuki Remote Desktop",
+        "title": "Onyx Remote Desktop",
         "items": [
           [
             "fa-share",
@@ -977,7 +977,7 @@
           [
             "fa-rocket",
             "Electron App",
-            "Download the native YukiOS desktop app for persistent storage, system tray, and remote host."
+            "Download the native OnyxOS desktop app for persistent storage, system tray, and remote host."
           ]
         ]
       },
@@ -1287,7 +1287,7 @@
           [
             "fa-hdd",
             "Mount Real Folders",
-            "Mount real local directories into the YukiOS filesystem via the File System Access API with full read/write support."
+            "Mount real local directories into the OnyxOS filesystem via the File System Access API with full read/write support."
           ]
         ]
       }
@@ -1303,7 +1303,7 @@
           [
             "fa-cloud-arrow-down",
             "Automatic Update Detection",
-            "YukiOS now checks for new versions automatically and shows a tray icon when an update is available."
+            "OnyxOS now checks for new versions automatically and shows a tray icon when an update is available."
           ]
         ]
       },
@@ -1420,8 +1420,8 @@
         "items": [
           [
             "fa-layer-group",
-            "Yuki Steam Overlay",
-            "Press Shift+Tab in any game to open the Yuki Steam overlay with playtime, achievements, friends, notes, and a built-in browser."
+            "Onyx Steam Overlay",
+            "Press Shift+Tab in any game to open the Onyx Steam overlay with playtime, achievements, friends, notes, and a built-in browser."
           ]
         ]
       },
@@ -1795,7 +1795,7 @@
       {
         "icon": "fa-wand-magic-sparkles",
         "title": "New App",
-        "items": [["fa-code", "Yuki Dev Tools", "Run IT Tools that look nice with yukios themes."]]
+        "items": [["fa-code", "Onyx Dev Tools", "Run IT Tools that look nice with yukios themes."]]
       },
       {
         "icon": "fa-palette",
@@ -1899,12 +1899,12 @@
           [
             "fa-mouse-pointer",
             "Tray Context Menus",
-            "Right-click tray icons for quick actions. Power modes, brightness presets,network settings, clipboard app, Yuki Steam library/store, and recent games."
+            "Right-click tray icons for quick actions. Power modes, brightness presets,network settings, clipboard app, Onyx Steam library/store, and recent games."
           ],
           [
             "fa-user-friends",
             "Live Friends Stats",
-            "Track active users and trending OS apps inside your Yuki Steam Friends List."
+            "Track active users and trending OS apps inside your Onyx Steam Friends List."
           ],
           ["fa-mask", "Incognito mode", "Add incognito mode in browser"]
         ]
@@ -1942,7 +1942,7 @@
         "items": [
           [
             "fa-robot",
-            "Yuki AI Assistant",
+            "Onyx AI Assistant",
             "Local AI assistant that runs in your browser - launch apps, manage files, and chat without sending data anywhere."
           ],
           [
@@ -1952,7 +1952,7 @@
           ],
           [
             "fa-book-open",
-            "YukiOS Guide",
+            "OnyxOS Guide",
             "A built-in guide that walks you through apps, features, and how everything fits together."
           ],
           [
@@ -2055,7 +2055,7 @@
           ["fa-gamepad", "Azahar Emulator", "Add azahar emulator with 3ds support"],
           ["fa-rocket", "Setup Wizard", "Introduced first-time setup wizard for system personalization."],
           ["fa-gamepad", "LuminSDK Catalog", "Added LuminSDK with 1000+ games catalog to steam app."],
-          ["fa-video", "Yuki Convert Upgrade", "Added video and audio format support for file conversion."],
+          ["fa-video", "Onyx Convert Upgrade", "Added video and audio format support for file conversion."],
           ["fa-window-maximize", "Context Menu Fixes", "Fixed desktop context menu overflow issues."]
         ]
       }
@@ -2160,7 +2160,7 @@
         "icon": "fa-wand-magic-sparkles",
         "title": "Features & Improvements",
         "items": [
-          ["fa-star", "Yuki Steam Improvement", "Improved Yuki Steam UI and added settings."],
+          ["fa-star", "Onyx Steam Improvement", "Improved Onyx Steam UI and added settings."],
           ["fa-film", "Ruffle App", "Added ruffle."],
           ["fa-star", "Slime Rancher and TABS", "Added Slime Rancher and TABS."]
         ]
@@ -2176,11 +2176,11 @@
         "items": [
           [
             "fa-steam-symbol",
-            "Yuki Steam Improvement",
-            "Improved Yuki Steam UI and settings, with a data pack install option and faster loading."
+            "Onyx Steam Improvement",
+            "Improved Onyx Steam UI and settings, with a data pack install option and faster loading."
           ],
           ["fa-film", "Ruffle App", "Added ruffle."],
-          ["fa-mobile-screen", "PWA Support", "Added progressive web app support for YukiOS."],
+          ["fa-mobile-screen", "PWA Support", "Added progressive web app support for OnyxOS."],
           ["fa-sliders", "Taskbar Customization support", "Added taskbar alignment options."],
           ["fa-user", "Profile Customization support", "Added Customize Profile app."],
           ["fa-arrow-pointer", "Cursor Support", "Added custom cursor support"],
@@ -2232,7 +2232,7 @@
         "items": [
           ["fa-right-left", "Import / Export", "Back up or migrate your setup with the new data import/export system."],
           ["fa-trophy", "Achievements UI Refresh", "Reworked the achievements interface for a cleaner experience."],
-          ["fa-house", "Yuki Steam Home Button", "Added a add to home button in the Yuki Steam app."],
+          ["fa-house", "Onyx Steam Home Button", "Added a add to home button in the Onyx Steam app."],
           ["fa-ellipsis", "Menus & Explorer Polish", "Improved context menus and refined explorer styling."]
         ]
       }
@@ -2247,8 +2247,8 @@
         "items": [
           [
             "fa-magnifying-glass",
-            "Yuki Steam Launch from Search",
-            "Launch Yuki Steam apps directly from the search/query experience."
+            "Onyx Steam Launch from Search",
+            "Launch Onyx Steam apps directly from the search/query experience."
           ],
           ["fa-book-open", "Game Descriptions", "Added game descriptions for better discovery."]
         ]
@@ -2298,7 +2298,7 @@
         "icon": "fa-rocket",
         "title": "New Apps",
         "items": [
-          ["fa-code", "Yuki Code", "A full code editor powered by VS Code, built right into your desktop."],
+          ["fa-code", "Onyx Code", "A full code editor powered by VS Code, built right into your desktop."],
           ["fa-file-lines", "Markdown Viewer", "Open and read Markdown files directly in the system."],
           ["fa-file-word", "Full Office Suite", "Create and edit office documents right in your workspace."],
           ["fa-calendar-days", "Events in Clock", "Track dates and events from the Clock app's Events tab."],
@@ -2337,7 +2337,7 @@
           ],
           ["fa-bolt", "File Download", "You can now download files from explorer right clicking to files."],
           ["fa-image", "Dynamic Favicon", "The browser tab icon now updates to reflect what you're doing."],
-          ["fa-video", "Yuki Convert", "Convert any file to other formats fuly locally without uploading to a server."],
+          ["fa-video", "Onyx Convert", "Convert any file to other formats fuly locally without uploading to a server."],
           ["fa-window-restore", "Window Icons", "App windows now display their respective icons in the title bar."],
           ["fa-bars", "Window Header Menu", "Right-click on a window header for quick actions."],
           ["fa-i-cursor", "F2 Rename in Explorer", "Press F2 to rename files quickly, just like a native OS."],

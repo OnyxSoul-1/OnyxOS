@@ -1202,7 +1202,7 @@ export class GameOverlayController {
           <div class="overlay-settings-section-title">Overlay Settings</div>
           <div class="overlay-settings-row">
             <div>
-              <div class="overlay-settings-label">Enable Yuki Steam Overlay While In-Game</div>
+              <div class="overlay-settings-label">Enable Onyx Steam Overlay While In-Game</div>
               <div class="overlay-settings-desc">Show overlay when pressing the shortcut key</div>
             </div>
             <div class="overlay-settings-toggle ${this.settings.enabled ? "active" : ""}" data-setting="enabled"></div>

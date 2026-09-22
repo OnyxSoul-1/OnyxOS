@@ -93,7 +93,7 @@ export async function startVirtualHttpServer(ctx, options) {
   ctx.print("Serving HTTP on 0.0.0.0 port " + port + " (http://localhost:" + port + "/) ...");
   ctx.print("Serving directory " + rootPath);
   ctx.print(
-    "Press Ctrl+C to stop the server. Open the " + "Yuki Browser" + " and go to http://localhost:" + port + "/"
+    "Press Ctrl+C to stop the server. Open the " + "Onyx Browser" + " and go to http://localhost:" + port + "/"
   );
   while (!ctx.getStopRequested()) {
     await sleep(250);

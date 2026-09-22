@@ -41,7 +41,7 @@ export class WindowManager {
     this.gameWindowCount = 0;
     this.isDraggingWindow = false;
     this.notificationCenter = notificationCenter;
-    this.initialTitle = document.title || "YukiOS";
+    this.initialTitle = document.title || "OnyxOS";
     const faviconLink = $("link[rel~='icon']");
     this.initialFavicon = faviconLink ? faviconLink.href : "";
     this.snapGhost = null;

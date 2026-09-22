@@ -569,7 +569,7 @@ export class RoomRenderer {
       steam.position.set(-0.55 + (i - 1) * 0.025, 0.81 + 0.09 + i * 0.02, -0.55);
       steam.rotation.x = (i - 1) * 0.1;
       steam.rotation.z = (i - 1) * 0.1;
-      steam.userData.title = "Yuki Steam";
+      steam.userData.title = "Onyx Steam";
       this.scene.add(steam);
     }
   }

@@ -23,7 +23,7 @@ export function buildFileProtocolFallbackHtml(appId, targetUrl) {
   .btn-primary:hover{filter:brightness(1.08)}
   .btn-ghost{background:rgba(255,255,255,0.06);color:${theme.text}}
   .btn-ghost:hover{background:rgba(255,255,255,0.1)}
-</style></head><body><div class="card"><div class="badge">!</div><div class="title">Can't open in file://</div><p class="desc">YukiOS Browser and web apps need a web server. Service Worker and Wisp can't run from <code>file://</code> (origin is <code>null</code>).</p><div class="actions"><button class="btn btn-primary" onclick='window.open(${JSON.stringify(pagesUrl)}, "_blank", "noopener")'>Open from YukiOS</button></div></div></body></html>`;
+</style></head><body><div class="card"><div class="badge">!</div><div class="title">Can't open in file://</div><p class="desc">OnyxOS Browser and web apps need a web server. Service Worker and Wisp can't run from <code>file://</code> (origin is <code>null</code>).</p><div class="actions"><button class="btn btn-primary" onclick='window.open(${JSON.stringify(pagesUrl)}, "_blank", "noopener")'>Open from OnyxOS</button></div></div></body></html>`;
 }
 
 export function injectFileProtocolFallback(container, appId, targetUrl) {

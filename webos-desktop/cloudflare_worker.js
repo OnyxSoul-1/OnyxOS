@@ -4432,7 +4432,7 @@ function adminHTML() {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>YukiOS Analytics</title>
+<title>OnyxOS Analytics</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -4632,7 +4632,7 @@ canvas{width:100%!important;height:100%!important}
 <div class="app-shell">
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <div class="logo-text">YukiOS</div>
+      <div class="logo-text">OnyxOS</div>
       <div class="logo-sub">Analytics Dashboard</div>
     </div>
     <nav class="sidebar-nav">

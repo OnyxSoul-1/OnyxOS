@@ -65,10 +65,10 @@ function html() {
 <!doctype html>
 <html>
 <head>
-  <title>YukiOS Proxy Worker</title>
+  <title>OnyxOS Proxy Worker</title>
 </head>
 <body style="background:#111;color:#eee;font-family:sans-serif;padding:40px;">
-  <h1>YukiOS Proxy Worker</h1>
+  <h1>OnyxOS Proxy Worker</h1>
   <p>Usage:</p>
   <ul>
     <li><code>?quest=https://example.com</code></li>

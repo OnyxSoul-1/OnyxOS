@@ -393,7 +393,7 @@ export class GameRenderer {
           <div class="overview-main">
             <div style="background: var(--surface-1); padding: 20px; border-radius: 4px; margin-bottom: 20px;">
               <h3 style="margin-top: 0; color: var(--brand); text-transform: uppercase; font-size: 14px;">Game Info</h3>
-              <p style="line-height: 1.6; color: var(--text-muted);">Experience ${archiveGame.title} on YukiOS. This game is part of the archive collection.</p>
+              <p style="line-height: 1.6; color: var(--text-muted);">Experience ${archiveGame.title} on OnyxOS. This game is part of the archive collection.</p>
             </div>
             <div class="steam-overview-panel">
               <div class="steam-overview-panel-head">

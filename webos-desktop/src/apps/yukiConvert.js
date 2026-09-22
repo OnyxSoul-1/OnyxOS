@@ -9,7 +9,7 @@ export class YukiConvertApp extends BaseApp {
   }
 
   async open() {
-    const win = os.window.create("yuki-convert", "Yuki Convert", "540px", "420px", {
+    const win = os.window.create("yuki-convert", "Onyx Convert", "540px", "420px", {
       icon: "fas fa-exchange-alt"
     });
     win.innerHTML = `<div class="window-content yuki-convert-landing">
@@ -18,7 +18,7 @@ export class YukiConvertApp extends BaseApp {
           <div class="yuki-convert-icon-box">
             <i class="fas fa-exchange-alt"></i>
           </div>
-          <h2 class="yuki-convert-landing-title">Yuki Convert</h2>
+          <h2 class="yuki-convert-landing-title">Onyx Convert</h2>
           <p class="yuki-convert-landing-desc">
             Easily batch convert images, audio, video, structured data, and documents directly in your browser without any server uploads.
           </p>
@@ -28,7 +28,7 @@ export class YukiConvertApp extends BaseApp {
               <i class="fas fa-laptop"></i> From Device
             </button>
             <button id="yuki-convert-btn-yuki" class="yuki-convert-btn-secondary">
-              <i class="fas fa-folder-open"></i> Browse YukiOS
+              <i class="fas fa-folder-open"></i> Browse OnyxOS
             </button>
           </div>
         </div>

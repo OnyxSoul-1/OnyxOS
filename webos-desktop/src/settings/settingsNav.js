@@ -77,7 +77,7 @@ export const SETTINGS_GROUPS = [
     icon: "fas fa-gamepad",
     items: [
       { id: "ruffle", title: "Ruffle (Flash)", icon: "fas fa-bolt", pane: "pane-ruffle" },
-      { id: "steam", title: "Yuki Steam", icon: "fab fa-steam", pane: "pane-gaming" }
+      { id: "steam", title: "Onyx Steam", icon: "fab fa-steam", pane: "pane-gaming" }
     ]
   },
   {

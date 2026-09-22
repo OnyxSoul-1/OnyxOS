@@ -8,7 +8,7 @@ import { $, $$, createElement, setStyle, addClass } from "./shared/domUtils.js";
 import { parseBool } from "./utils/utils.js";
 import { isFunction } from "./shared/functionUtils.js";
 
-const BRAND = "YukiOS";
+const BRAND = "OnyxOS";
 const MIN_DURATION = 2500;
 
 export function showBootScreen() {

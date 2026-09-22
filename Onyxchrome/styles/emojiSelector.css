@@ -1,0 +1,37 @@
+.emoji-selector-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-secondary);
+  padding: 0;
+  gap: 0;
+}
+
+.emoji-mart-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.emoji-mart-picker {
+  height: 100%;
+}
+
+#emoji-mart-container .emoji-mart {
+  background: var(--bg-secondary);
+  border: none;
+  font-family: inherit;
+}
+
+.emoji-preview.visible {
+  opacity: 1;
+}
+
+.emoji-selector-copy-buffer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}

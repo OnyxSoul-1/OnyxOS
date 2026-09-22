@@ -33,6 +33,6 @@ export class ModeAPI {
       const label = this.getModeName(id);
       if (label) return label;
     }
-    return "YukiOS";
+    return "OnyxOS";
   }
 }

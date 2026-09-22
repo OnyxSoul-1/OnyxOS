@@ -1,0 +1,337 @@
+.calendar-popup {
+  position: fixed;
+  background: var(--menu-bg);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow:
+    0 10px 64px var(--shadow-color),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 10000;
+  animation: calendar-fade-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 340px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-body {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex: 1;
+}
+
+.calendar-left-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.calendar-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding-left: 12px;
+}
+
+@keyframes calendar-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.calendar-time-display {
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar-analog-canvas {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+.calendar-digital-text {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-top: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.calendar-month-year-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.calendar-month-year {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.calendar-today-btn {
+  background: var(--brand-dim);
+  border: 1px solid var(--brand);
+  color: var(--text-on-brand);
+  font-size: 0.7em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.calendar-today-btn:hover {
+  background: var(--brand);
+  transform: scale(1.05);
+}
+
+.calendar-nav-btn {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  font-size: 1.5em;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.calendar-nav-btn:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+.calendar-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: auto repeat(7, 1fr);
+  gap: 1px;
+}
+
+.calendar-week-header,
+.calendar-week-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  color: var(--text-muted);
+  padding: 4px;
+  min-width: 24px;
+}
+
+.calendar-day-header {
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 8px 4px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.78em;
+  color: var(--text-primary);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.calendar-day:not(.empty):hover {
+  background: var(--glass-hover);
+  transform: translateY(-1px);
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.calendar-day.weekend {
+  color: var(--text-secondary);
+}
+
+.calendar-day.today {
+  background: var(--brand);
+  font-weight: 700;
+  box-shadow: 0 0 0 2px var(--brand-glow);
+}
+
+.calendar-day.today:hover {
+  background: var(--brand-hover);
+}
+
+#time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#time-container #clock {
+  font-size: 0.9em;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+#time-container #date {
+  font-size: 0.75em;
+  text-align: center;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+#time-container:hover #date {
+  opacity: 1;
+}
+
+.calendar-alarm-section {
+  padding: 6px 0 0;
+}
+
+.calendar-alarm-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: var(--glass);
+  font-size: 0.82em;
+}
+
+.calendar-alarm-icon {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  width: 18px;
+  text-align: center;
+}
+
+.calendar-alarm-label {
+  color: var(--text-secondary);
+  font-size: 0.85em;
+}
+
+.calendar-alarm-time {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+.calendar-alarm-name {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  margin-left: 4px;
+}
+
+.calendar-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  width: 100%;
+}
+
+.calendar-settings-link {
+  font-size: 0.78em;
+  color: var(--brand);
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+}
+
+.calendar-settings-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.mac-mode .calendar-popup,
+html[data-theme].mac-mode .calendar-popup {
+  background: #000000a3 !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid black !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 16px !important;
+}
+
+.mac-mode .calendar-nav-btn,
+html[data-theme].mac-mode .calendar-nav-btn {
+  background: rgb(28 28 32 / 55%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.mac-mode .calendar-nav-btn:hover,
+html[data-theme].mac-mode .calendar-nav-btn:hover {
+  background: rgb(28 28 32 / 65%) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.mac-mode .calendar-alarm-item,
+html[data-theme].mac-mode .calendar-alarm-item {
+  background: rgb(28 28 32 / 55%) !important;
+}
+
+.mac-mode .calendar-day:not(.empty):hover,
+html[data-theme].mac-mode .calendar-day:not(.empty):hover {
+  background: rgb(28 28 32 / 62%) !important;
+}
+
+.mac-mode .calendar-today-btn,
+html[data-theme].mac-mode .calendar-today-btn {
+  background: var(--brand-dim) !important;
+  border-color: var(--brand) !important;
+}
+
+.mac-mode .calendar-today-btn:hover,
+html[data-theme].mac-mode .calendar-today-btn:hover {
+  background: var(--brand) !important;
+}

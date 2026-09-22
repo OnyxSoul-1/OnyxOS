@@ -50,7 +50,7 @@ export class RunApp extends BaseApp {
   buildUI() {
     return `
       <div class="window-content run-root">
-        <div class="run-description">Type the name of a program, URL, or command and YukiOS will open it for you.</div>
+        <div class="run-description">Type the name of a program, URL, or command and OnyxOS will open it for you.</div>
         <div class="run-input-group">
           <input type="text" class="run-input" id="run-input" placeholder="Open" autocomplete="off" spellcheck="false">
         </div>

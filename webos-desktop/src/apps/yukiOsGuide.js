@@ -70,7 +70,7 @@ const SHOWCASE = [
   {
     group: "Play something",
     icon: "fab fa-steam",
-    title: "Yuki Steam",
+    title: "Onyx Steam",
     desc: "Browse and launch 3000+ games from a full library.",
     action: "steamApp"
   },
@@ -101,7 +101,7 @@ export class YukiOsGuideApp extends BaseApp {
   }
 
   async open(opts = {}) {
-    const win = os.window.create("yuki-os-guide", "YukiOS Guide", "980px", "720px", {
+    const win = os.window.create("yuki-os-guide", "OnyxOS Guide", "980px", "720px", {
       icon: "fas fa-book-open",
       appId: "yuki-os-guide"
     });
@@ -185,7 +185,7 @@ export class YukiOsGuideApp extends BaseApp {
             <i class="fas fa-rocket"></i>
           </div>
           <div class="guide-hero-content">
-            <h1>Welcome to YukiOS</h1>
+            <h1>Welcome to OnyxOS</h1>
             <p class="guide-tagline">A full desktop inside one browser tab. No installs, nothing to block, everything saved.</p>
             <p class="guide-blurb">Everything on this page is real and running right now. Drag windows, browse the web, open a terminal, or boot a retro game, then close the tab and come back later. It all remembers.</p>
             <button class="guide-tour-btn" type="button"><i class="fas fa-play"></i> Take the 60-second tour</button>
@@ -369,7 +369,7 @@ export class YukiOsGuideApp extends BaseApp {
       <div class="guide-section">
         <div class="guide-header">
           <h1><i class="fas fa-th-large"></i> Tiling Mode</h1>
-          <p>Hyprland-inspired automatic window tiling for YukiOS</p>
+          <p>Hyprland-inspired automatic window tiling for OnyxOS</p>
         </div>
 
         <div class="guide-subsection">

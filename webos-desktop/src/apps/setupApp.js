@@ -126,7 +126,7 @@ export const FEATURE_DATA = {
     },
     {
       icon: "fas fa-gamepad",
-      title: "Yuki Steam Game Hub",
+      title: "Onyx Steam Game Hub",
       desc: "Browse and launch thousands of games instantly"
     },
     {
@@ -186,7 +186,7 @@ export const FEATURE_DATA = {
     },
     {
       icon: "fas fa-gamepad",
-      title: "Yuki Steam Context Actions",
+      title: "Onyx Steam Context Actions",
       desc: "Favorite, hide, and organize your game library"
     },
     {
@@ -208,7 +208,7 @@ export const FEATURE_DATA = {
       { id: "browser", title: "Browser", icon: "static/icons/firefox.webp" },
       { id: "explorer", title: "Explorer", icon: "fas fa-folder" },
       { id: "settings", title: "Settings", icon: "fas fa-cog" },
-      { id: "yukiOsGuide", title: "YukiOS Guide", icon: "fas fa-book-open" }
+      { id: "yukiOsGuide", title: "OnyxOS Guide", icon: "fas fa-book-open" }
     ],
     transparencyLevels: [
       { value: "high", title: "High Transparency", desc: "More glass effect" },
@@ -269,7 +269,7 @@ export class SetupApp extends BaseApp {
 
     await this.loadWallpapers();
 
-    const win = os.window.create(winId, "Set Up YukiOS", "85vw", "75vh", {
+    const win = os.window.create(winId, "Set Up OnyxOS", "85vw", "75vh", {
       icon: "fas fa-rocket",
       position: "center",
       skipHeader: true
@@ -286,7 +286,7 @@ export class SetupApp extends BaseApp {
   }
 
   buildUI() {
-    const headerHtml = buildHeaderForStyle("Set Up YukiOS", "", os.window.getWindowControls(), resolveHeaderStyleId());
+    const headerHtml = buildHeaderForStyle("Set Up OnyxOS", "", os.window.getWindowControls(), resolveHeaderStyleId());
     return `
       ${headerHtml}
       <div class="window-content setup-wizard">
@@ -728,7 +728,7 @@ export class SetupApp extends BaseApp {
         <h2 class="step-title">
           <i class="fas fa-compass"></i> Get Around Faster
         </h2>
-        <p style="font-size:13px;color:var(--text-secondary);margin:0 0 12px;">YukiOS stays fast with the keyboard. Start with these four, then explore the rest.</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin:0 0 12px;">OnyxOS stays fast with the keyboard. Start with these four, then explore the rest.</p>
         <div class="personalize-section">
           <label class="section-label">Essential Shortcuts</label>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
@@ -861,7 +861,7 @@ export class SetupApp extends BaseApp {
         <div class="complete-actions">
           <button id="setup-launch-guide" class="setup-guide-btn">
             <i class="fas fa-book-open"></i>
-            <span>Open YukiOS Guide</span>
+            <span>Open OnyxOS Guide</span>
           </button>
         </div>
       </div>
@@ -1239,7 +1239,7 @@ Have fun!`;
       console.error("Failed to create welcome file:", e);
     }
 
-    os.notify.send("Welcome to YukiOS", "", {
+    os.notify.send("Welcome to OnyxOS", "", {
       type: "success",
       duration: 3000
     });
